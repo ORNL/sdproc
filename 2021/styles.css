@@ -443,3 +443,19 @@ ul.nav-sidebar {
   padding: 0;
   list-style-type: none;
 }
+
+ol#refs {
+  counter-reset: list !important; 
+  margin-left: 0;
+  padding-left: 1em;
+}
+ol#refs > li {
+  list-style: none !important;
+  margin-bottom: 10px;
+  padding-left: 0.7em;
+  text-indent: -1.7em;
+}
+ol#refs > li:before {
+  content: "[" counter(list, lower-digit) "] " !important;
+  counter-increment: list !important;
+}

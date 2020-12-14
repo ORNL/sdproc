@@ -193,7 +193,134 @@
 
         <h2 id="3c">3C Citation Context Classification</h2>
 
-        <p>
+        <p>Recent years have witnessed a massive increase in the amount of scientific literature and research data being
+          published online, providing revelation about the advancements in the field of different domains. The introduction of
+          aggregator services like CORE <a href="#references">[1]</a> has enabled unprecedented levels of open access to
+          scholarly publications. The availability of full text of the research documents facilitates the possibility of
+          extending the bibliometric studies by identifying the context of the citations <a href="#references">[2]</a>. The
+          shared task organized as part of the WOSP 2020 focuses on classifying citation context in research publications based
+          on their influence and purpose.</p>
+        
+        <p><strong>Subtask A:</strong> A task for indentifying the purpose of a citation. Multiclass classification of citations into one of six classes: Background, Uses,
+          Compare_Contrast, Motivation, Extension, and Future.</p>
+
+        <p><strong>Subtask B:</strong> A task for identifying the importance of a citation. Binary classification of citations into one of two classes: Incidental, and
+          Influential.</p>
+        
+        <h3>Dataset</h3>
+
+        <p>The participants will be provided with a labeled dataset of 3000 instances annotated using the ACT platform <a
+            href="#references">[3]</a>.</p>
+        <p>The dataset is provided in csv format and contains the following fields:</p>
+        
+        <ul>
+          <li>Unique Identifier</li>
+          <li>COREID of Citing Paper</li>
+          <li>Citing Paper Title</li>
+          <li>Citing Paper Author</li>
+          <li>Cited Paper Title</li>
+          <li>Cited Paper Author</li>
+          <li>Citation Context</li>
+          <li>Citation Class Label</li>
+          <li>Citation Influence Label</li>
+        </ul>
+        
+        <p>Each citation context in the dataset contains an "#AUTHOR_TAG" label, which represents the citation that is being
+          considered. All other fields in the dataset correspond to the values associated with the #AUTHOR_TAG. The possible
+          values of the <strong>citation_class_label</strong> are:</p>
+        
+        <ul>
+          <li>0 - BACKGROUND</li>
+          <li>1 - COMPARES_CONTRASTS</li>
+          <li>2 - EXTENSION</li>
+          <li>3 - FUTURE</li>
+          <li>4 - MOTIVATION</li>
+          <li>5 - USES</li>
+        </ul>
+        
+        <p>and that of <strong>citation_influence_label</strong> are:
+        
+        <ul>
+          <li>0 - INCIDENTAL</li>
+          <li>1 - INFLUENTIAL</li>
+        </ul>
+        
+        </p>
+        <p>The following table shows a sample entry from the training dataset.</p>
+        
+        <table class="table table-striped">
+          <tr>
+            <td>unique_id</td>
+            <td>1998</td>
+          </tr>
+          <tr>
+            <td>core_id</td>
+            <td>81605842</td>
+          </tr>
+          <tr>
+            <td>citing_title</td>
+            <td>Everolimus improves behavioral deficits in a patient with autism associated with tuberous
+              sclerosis: a case report</td>
+          </tr>
+          <tr>
+            <td>citing_author</td>
+            <td>Ryouhei Ishii</td>
+          </tr>
+          <tr>
+            <td>cited_title</td>
+            <td>Learning disability and epilepsy in an epidemiological sample of individuals with tuberous
+              sclerosis complex</td>
+          </tr>
+          <tr>
+            <td>cited_author</td>
+            <td>Joinson</td>
+          </tr>
+          <tr>
+            <td>citation_context</td>
+            <td>West syndrome (infantile spasms) is the common estc epileptic disorder, which is associated
+              with more intellectual disability and a less favorable neurological outcome (#AUTHOR_TAG et al, 2003)</td>
+          </tr>
+          <tr>
+            <td>citation_class_label</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>citation_influence_label</td>
+            <td>1</td>
+          </tr>
+        </table>
+
+        <br />
+        <p>The <a href="http://jurgens.people.si.umich.edu/citation-function/" target="_blank">ACL-ARC</a> dataset <a
+            href="#references">[4]</a>, which is compatible with our ACT dataset can be used by the participants during the
+          competition.</p>
+        
+        <h3>Evaluation</h3>
+        <p>The evaluation will be conducted using the withheld test data containing 1000 instances. The evaluation metric used
+          will be the F1-macro score.</p>
+        
+        <!-- <p style="text-align:center;"><img src="site-assets/images/CodeCogsEqn.gif"></p> -->
+        
+        $$\mbox{F1-macro} = {\frac{1}{n} \sum_{i=1}^{n}{\frac{2 \times P_i \times R_i}{P_i + R_i}}}$$
+        
+        <h3 id="registration">Team Registration</h3>
+
+        <p>A registration form and a link to the dataset will be provided shortly.</p>
+        
+        <!-- <p>This year, we are hosting the shared task on the <a href="https://www.kaggle.com/c/about/inclass"
+            target="_blank">Kaggle inClass</a> platform. Please note that both subtasks will be hosted as separate competitions
+          on kaggle. Please make sure you sign in/register to kaggle before clicking the following links.</p>
+        
+        <p>To participate in the Shared Task:</p>
+        
+        <dl class="topics">
+          <dd>For subtask A, please visit <a href="https://www.kaggle.com/c/3c-shared-task-purpose/" target="_blank">Kaggle
+              citation purpose </a>classification</dd>
+          <dd>For subtask B, please visit <a href="https://www.kaggle.com/c/3c-shared-task-influence/" target="_blank">Kaggle
+              citation influence </a>classification</dd>
+        </dl> -->
+
+        <!-- <p>
           To address the problem of all citations being treated equally by research metrics, we will run a shared task that will encourage the development of models capable of classifying citations according to their <i>influence</i> and <i>purpose</i>. The shared task will build on our experience from organizing the <a href="https://wosp.core.ac.uk/jcdl2020/shared_task.html#3ctask">3C shared task at WOSP 2020</a>, as well as the <a href="https://biendata.com/competition/wsdm2020/">Citation Intent Classification challenge</a> at WSDM 2020.
         </p>
 
@@ -209,15 +336,28 @@
 
         <p>
           In addition to subtasks 1 and 2 introduced in 3C 2020, we will include a new subtask focused on classification of publications into seminal and survey categories according to the context in which they are cited. 3C 2020 saw 3 teams participate in subtask 1 and 4 teams in subtask 2, while WSDM Cup 2020 saw 99 teams participate in the challenge.
-        </p>
+        </p> -->
 
         <h3>Organizers</h3>
 
         <p><a href="http://kmi.open.ac.uk/people/member/petr-knoth">Petr Knoth</a>, Open University, UK</p>
 
-        <p><a href="https://www.microsoft.com/en-us/research/people/kuansanw/">Kuansan Wang</a>, Microsoft Research</p>
+        <p><a href="http://kmi.open.ac.uk/people/member/suchetha-n-kunnath">Suchetha N. Kunnath</a>, Open University, UK</p>
 
-        <p><a href="http://dasha.tech">Drahomira Herrmannova</a>, Oak Ridge National Laboratory</p>
+        <p><a href="http://kmi.open.ac.uk/people/member/david-pride">David Pride</a>, Open University, UK</p>
+
+        <!-- <p><a href="https://www.microsoft.com/en-us/research/people/kuansanw/">Kuansan Wang</a>, Microsoft Research</p> -->
+
+        <!-- <p><a href="http://dasha.tech">Drahomira Herrmannova</a>, Oak Ridge National Laboratory</p> -->
+
+        <h3>References</h3>
+
+        <ol id="refs">
+          <li>Knoth, Petr and Zdrahal, Zdenek. "<a href="http://www.dlib.org/dlib/november12/knoth/11knoth.html">CORE: three access levels to underpin open access</a>." D-Lib Magazine 18.11/12 (2012): 1-13.</li>
+          <li>Pride, David and Knoth, Petr. "<a href="http://oro.open.ac.uk/51751/">Incidental or influential? &mdash; A decade of using text-mining for citation function classification</a>." (2017).</li>
+          <li>Pride, David, Knoth, Petr and Harag, Jozef. "<a href="https://ieeexplore.ieee.org/abstract/document/8791134">ACT: An Annotation Platform for Citation Typing at Scale</a>." 2019 ACM/IEEE Joint Conference on Digital Libraries (JCDL). IEEE, 2019.</li>
+          <li>Jurgens, David, et al. "<a href="https://www.mitpressjournals.org/doi/abs/10.1162/tacl_a_00028">Measuring the evolution of a scientific field through citation frames</a>." Transactions of the Association for Computational Linguistics 6 (2018): 391-406.</li>
+        </ol>
 
         <!-- <hr class="featurette-divider"> -->
 
@@ -305,6 +445,7 @@
 
   <!-- Bootstrap core JavaScript ================================================== -->
   <script src="./dist/js/bootstrap.min.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </body>
 
