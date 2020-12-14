@@ -148,23 +148,46 @@
 
         <!-- SciVer ========================================================= -->
 
-        <h2 id="sciver">Shared Task on Rationalized Verification of Scientific Claims</h2>
+        <h2 id="sciver">SciVer: Scientific claim verification</h2>
 
         <p>
-          To help scientists with information overload and support scientific fact checking and evidence synthesis, 
-          we aim to build systems that can take an input claim, identify all relevant Supporting and Refuting text 
-          excerpts from papers in a large corpus, and provide the rationales for those predictions. In this shared task, 
-          we will use the <a href="https://arxiv.org/abs/2004.14974">SciFact
-            dataset</a> dataset of 1.4K expert-annotated biomedical claims verified against a large corpus of peer-reviewed papers. 
-            The <a href="https://scifact.apps.allenai.org/leaderboard">public leaderboard</a> already has submissions making progress on this task.
-          We will augment a subset of the SciFact corpus with additional annotations of <a href="https://arxiv.org/abs/1702.05398">
-              scientific discourse segments</a>, which will serve as a more detailed form of rationales for verified claims, and 
-          can potentially help identify new claims as well.
+          Due to the rapid growth in scientific literature, it is difficult for scientists to stay up-to-date on the latest findings. 
+          This challenge is especially acute during pandemics due to the risk of making decisions based on outdated or incomplete information. 
+          There is a need for AI systems that can help scientists with information overload and support scientific fact checking and evidence synthesis.
+        </p>
+        
+        <p>
+          In the SciVer shared task, we will build systems that can:
+          <ol>
+            <li>Take a scientific claim as <strong>input</strong></li>
+            <li>Identify all relevant abstracts in a large corpus</li>
+            <li>Label them as Supporting or Refuting the claim</li>
+            <li>Select sentences as supporting evidence for the label</li>
+          </ol>
+
+        Here’s a <a href="https://scifact.apps.allenai.org/">live demo</a> of what such a system would do. 
+        </p>
+      
+        <p>
+          We will use the <strong>SciFact dataset</strong> of 1,409 expert-annotated biomedical claims verified against 5,183 abstracts from peer-reviewed publications. 
+          <strong>Download</strong> the full dataset and any baseline models from <a href="https://github.com/allenai/scifact">GitHub</a>. 
+          Find out more from the <a href="https://www.aclweb.org/anthology/2020.emnlp-main.609/">EMNLP 2020 paper.</a> 
+        </p>
+ 
+        <h3>Registration</h3>
+        <p>
+          Please send an email to the organizers at <strong>sciver-info@allenai.org</strong> with:
+          <ul>
+            <li>Team name</li>
+            <li>Participant (full) names</li>
+            <li>Participant affiliation(s)</li>
+            <li>Email(s) for primary contact(s)</li>
+          </ul>
         </p>
 
         <h3>Organizers</h3>
 
-        <!-- <p><a href="http://armancohan.com/">Arman Cohan</a>, Allen Institute for Artificial Intelligence (AI2)</p> -->
+        <p><a href="https://dwadden.github.io/">Dave Wadden</a>, University of Washington</p>
 
         <p><a href="https://kyleclo.github.io/">Kyle Lo</a>, Allen Institute for Artificial Intelligence (AI2)</p>
 
@@ -174,7 +197,7 @@
 
         <p><a href="https://tirthankarslg.wixsite.com/ainlpmldl">Tirthankar Ghosal</a>, Indian Institute of Technology Patna, India</p>
 
-        <p><a href="http://kmi.open.ac.uk/people/member/petr-knoth">Petr Knoth</a>, The Open University, UK</p>
+        <!-- <p><a href="http://kmi.open.ac.uk/people/member/petr-knoth">Petr Knoth</a>, The Open University, UK</p> -->
 
         <!-- <p><a href="https://llwang.net/">Lucy Lu Wang</a>, Allen Institute for Artificial Intelligence (AI2)</p> -->
 
