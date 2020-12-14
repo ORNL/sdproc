@@ -1,3 +1,3 @@
-# SDProc 2021
+# SDProc
 
-Website for [Scholarly Document Processing workshop 2021](https://sdproc.org/)
+Website for [Scholarly Document Processing workshop](https://sdproc.org/)
