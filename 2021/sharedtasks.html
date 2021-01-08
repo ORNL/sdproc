@@ -217,7 +217,7 @@
             Each predicted abstract must be annotated with the following two pieces of information:
             <ul>
               <li>A <em><strong>label</strong></em> indicating whether the abstract <em>Supports</em> or <em>Refutes</em> the claim.</li>
-              <li>A list of <em><strong>evidence sentences</strong></em> from the abstract that justify the label.  For simpliciy, we only require predicting evidence sentences, not whole evidence sets.</li>
+              <li>A list of <em><strong>evidence sentences</strong></em> from the abstract that justify the label.  For simplicity, we only require predicting evidence sentences, not whole evidence sets.</li>
             </ul>
           </p>
           <p>
@@ -255,7 +255,7 @@
             <ol>
               <li>The predicted abstract is a relevant abstract.</li>
               <li>The abstract's predicted <em>Support</em> or <em>Refute</em> label matches its gold label.</li>
-              <li>The abstract's predicted evidence sentences contain at least one full gold evidence set.  Like the FEVER score, the number of predicted sentences is limited to 3.</li>
+              <li>The abstract's predicted evidence sentences contain at least one full gold evidence set.  Inspired by the FEVER score, the number of predicted sentences is limited to 3.</li>
             </ol>
 
             We then compute the F1 score over all predicted abstracts.
