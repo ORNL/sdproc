@@ -178,6 +178,35 @@
           <strong>Download</strong> the full dataset and any baseline models from <a href="https://github.com/allenai/scifact">GitHub</a>. 
           Find out more from the <a href="https://www.aclweb.org/anthology/2020.emnlp-main.609/">EMNLP 2020 paper.</a> 
         </p>
+      
+        <p>
+          For each claim, we provide:
+          <ul>
+              <li>A list of abstracts from the corpus containing relevant evidence.</li>
+              <li>A label indicating whether each abstract <em>supports</em> or <em>refutes</em> the claim.</li>
+              <li>The evidence (or <em>rationales</em>) found in each abstract that justify the label.</li>
+            </ul>
+        </p>
+    
+    
+         <p>
+           An example of a claim paired with evidence from a single abstract is shown below.
+            <pre>
+            <code>
+          {
+              "claim": "ALDH1 expression is associated with poorer prognosis for breast cancer primary tumors.",
+              "evidence": {
+                  "30041340": [
+                      { "sentences": [ 0, 1 ],  // Sentences 0 and 1, taken together, support the claim.
+                         "label": "SUPPORT" },
+                      { "sentences": [ 11 ],    // Sentence 11, on its own, supports the claim.
+                         "label": "SUPPORT" }
+                  ]
+              }
+          }
+            </code>
+           </pre>
+        </p>
  
         <h3>Registration</h3>
         <p>
