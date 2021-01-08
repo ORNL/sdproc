@@ -166,7 +166,7 @@
             <li>Take a scientific claim as input</li>
             <li>Identify all relevant abstracts in a large corpus</li>
             <li>Label them as Supporting or Refuting the claim</li>
-            <li>Select sentences as supporting evidence for the label</li>
+            <li>Select sentences as evidence for the label</li>
           </ol>
 
         Here’s a <a href="https://scifact.apps.allenai.org/search?Lopinavir%20%2F%20ritonavir%20have%20exhibited%20favorable%20clinical%20responses%20when%20used%20as%20a%20treatment%20for%20coronavirus.">live demo</a> of what such a system would do. 
@@ -174,21 +174,20 @@
       
         <h3>Dataset</h3>
         <p>
-          We will use the <strong>SciFact dataset</strong> of 1,409 expert-annotated biomedical claims verified against 5,183 abstracts from peer-reviewed publications. 
-          <strong>Download</strong> the full dataset and any baseline models from <a href="https://github.com/allenai/scifact">GitHub</a>. 
-          Find out more from the <a href="https://www.aclweb.org/anthology/2020.emnlp-main.609/">EMNLP 2020 paper.</a> 
+          We will use the SciFact dataset of 1,409 expert-annotated biomedical claims verified against 5,183 abstracts from peer-reviewed publications. 
+          Download the full dataset, baseline models, and descriptions from <a href="https://github.com/allenai/scifact">GitHub</a>. 
+          Find out more details from the <a href="https://www.aclweb.org/anthology/2020.emnlp-main.609/">EMNLP 2020 paper.</a> 
         </p>
       
         <p>
           For each claim, we provide:
           <ul>
               <li>A list of abstracts from the corpus containing relevant evidence.</li>
-              <li>A label indicating whether each abstract <em>supports</em> or <em>refutes</em> the claim.</li>
-              <li>The evidence (or <em>rationales</em>) found in each abstract that justify the label.</li>
+              <li>A label indicating whether each abstract <em>Supports</em> or <em>Refutes</em> the claim.</li>
+              <li>The evidence (or <em>rationales</em>) found in each abstract that justifies the label.</li>
             </ul>
         </p>
-    
-    
+ 
          <p>
            An example of a claim paired with evidence from a single abstract is shown below.
             <pre>
@@ -196,6 +195,7 @@
           {
               "claim": "ALDH1 expression is associated with poorer prognosis for breast cancer primary tumors.",
               "evidence": {
+                  // Evidence exists in abstract 30041340
                   "30041340": [
                       { "sentences": [ 0, 1 ],  // Sentences 0 and 1, taken together, support the claim.
                          "label": "SUPPORT" },
@@ -208,6 +208,37 @@
            </pre>
         </p>
  
+  
+         <h3>Evaluation</h3>
+          <p>
+            The final evaluation will use 300 new hidden test claims verified by evidence from the same released corpus.
+            For each claim, the system is expected to predict which abstracts contain relevant evidence. 
+            Each predicted abstract must be annotated with the following two pieces of information:
+            <ul>
+              <li>A <em><strong>label</strong></em> indicating whether the abstract <em>Supports</em> or <em>Refutes</em> the claim.</li>
+              <li>A list of <em><strong>evidence sentences</strong></em> from the abstract that justify the label.</li>
+            </ul>
+          </p>
+          <p>
+            An example prediction is shown below:
+            <pre>
+              <code>
+                {
+                  "claim": "ALDH1 expression is associated with poorer prognosis for breast cancer primary tumors.",
+                  "evidence": {
+                      // Predicted that abstract 30041340 contains evidence
+                      "30041340": {
+                          "sentences": [ 1, 11, 13 ], // Predicted evidence sentences
+                          "label": "SUPPORT"          // Predicted label
+                      }
+                  }
+              }
+              </code>
+            </pre>
+          </p>
+  
+  
+  
         <h3>Registration</h3>
         <p>
           Please send an email to the organizers at <a href="mailto:sciver-info@allenai.org">sciver-info@allenai.org</a> with:
