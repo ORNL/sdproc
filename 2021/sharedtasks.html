@@ -161,7 +161,7 @@
         </p>
         
         <p>
-          In the SciVer shared task, we will build systems that can:
+          In the SciVer shared task, we will build systems of the form:
           <ol>
             <li>Take a scientific claim as input</li>
             <li>Identify all relevant abstracts in a large corpus</li>
@@ -169,7 +169,7 @@
             <li>Select sentences as evidence for the label</li>
           </ol>
 
-        Here’s a <a href="https://scifact.apps.allenai.org/search?Lopinavir%20%2F%20ritonavir%20have%20exhibited%20favorable%20clinical%20responses%20when%20used%20as%20a%20treatment%20for%20coronavirus.">live demo</a> of what such a system would do. 
+        Here’s a <a href="https://scifact.apps.allenai.org/search?Lopinavir%20%2F%20ritonavir%20have%20exhibited%20favorable%20clinical%20responses%20when%20used%20as%20a%20treatment%20for%20coronavirus.">live demo</a> of what such a system could do. 
         </p>
       
         <h3>Dataset</h3>
@@ -184,7 +184,7 @@
           <ul>
               <li>A list of abstracts from the corpus containing relevant evidence.</li>
               <li>A label indicating whether each abstract <em>Supports</em> or <em>Refutes</em> the claim.</li>
-              <li>The evidence (or <em>rationales</em>) found in each abstract that justifies the label.</li>
+              <li>All evidence sets found in each abstract that justify the label. An evidence set is a collection of sentences that, taken together, verifies the claim. Evidence sets can be one or more sentences.</li>
             </ul>
         </p>
  
@@ -195,11 +195,12 @@
           {
               "claim": "ALDH1 expression is associated with poorer prognosis for breast cancer primary tumors.",
               "evidence": {
-                  // Evidence exists in abstract 30041340
+                  // Abstract 30041340 is relevant for verifying this claim.
                   "30041340": [
-                      { "sentences": [ 0, 1 ],  // Sentences 0 and 1, taken together, support the claim.
+                      // This abstract has 2 evidence sets.
+                      { "sentences": [ 0, 1 ],  // In this evidence set, Sentences 0 and 1, taken together, support the claim.
                          "label": "SUPPORT" },
-                      { "sentences": [ 11 ],    // Sentence 11, on its own, supports the claim.
+                      { "sentences": [ 11 ],    // In this evidence set, Sentence 11, on its own, supports the claim.
                          "label": "SUPPORT" }
                   ]
               }
@@ -209,10 +210,10 @@
         </p>
  
   
-         <h3>Evaluation</h3>
+         <h3>Submission format</h3>
           <p>
             The final evaluation will use 300 new hidden test claims verified by evidence from the same released corpus.
-            For each claim, the system is expected to predict which abstracts contain relevant evidence. 
+            For each claim, the system is expected to predict which abstracts contain relevant evidence.
             Each predicted abstract must be annotated with the following two pieces of information:
             <ul>
               <li>A <em><strong>label</strong></em> indicating whether the abstract <em>Supports</em> or <em>Refutes</em> the claim.</li>
@@ -223,20 +224,59 @@
             An example prediction is shown below:
             <pre>
               <code>
-                {
-                  "claim": "ALDH1 expression is associated with poorer prognosis for breast cancer primary tumors.",
-                  "evidence": {
-                      // Predicted that abstract 30041340 contains evidence
-                      "30041340": {
-                          "sentences": [ 1, 11, 13 ], // Predicted evidence sentences
-                          "label": "SUPPORT"          // Predicted label
-                      }
+          {
+              "claim": "ALDH1 expression is associated with poorer prognosis for breast cancer primary tumors.",
+              "evidence": {
+                  // Predicted that abstract 30041340 contains evidence
+                  "30041340": {
+                      "sentences": [ 1, 11, 13 ], // Predicted evidence sentences. For simpliciy, we don't require predicting entire evidence sets, just the sentences.
+                      "label": "SUPPORT"          // Predicted label
                   }
               }
+          }
               </code>
             </pre>
           </p>
   
+        <h3>Evaluation</h3>
+          <p>
+            Two evaluation metrics will be used. For a full description, see Section 4 of the 
+            <a href="https://www.aclweb.org/anthology/2020.emnlp-main.609/">SciFact paper</a>.
+          </p>
+
+          <h5>Abstract-level evaluation</h5>
+
+          <p>
+            <emph>Abstract-level</emph> evaluation is similar to the FEVER score, described in 
+            <a href="https://www.aclweb.org/anthology/N18-1074/">the FEVER paper (Thorne et al., 2018)</a>. 
+
+            A predicted abstract is <em>Correct</em> if:
+
+            <ol>
+              <li>The predicted abstract is a relevant abstract.</li>
+              <li>The abstract's predicted <em>Support</em> or <em>Refute</em> label matches its gold label.</li>
+              <li>The abstract's predicted evidence sentences contain at least one full gold evidence set.  Like the FEVER score, the number of predicted sentences is limited to 3.</li>
+            </ol>
+
+            We then compute the F1 score over all predicted abstracts.
+
+          </p>
+          <h5>Sentence-level evaluation</h5>
+
+          <p>
+            <emph>Sentence-level</emph> evaluation scores the correctness of the individual predicted evidence sentences. 
+
+            A predicted sentence <em>Correct</em> if:
+
+            <ol>
+              <li>The abstract containing the sentence is labeled correctly as <em>Support</em> or <em>Refute</em>.</li>
+              <li>The sentence is part of <em>some</em> gold evidence set.</li>
+              <li>All other sentences in that same gold evidence set are also identified by the model as evidence sentences.</li>
+            </ol>
+
+            We then compute the F1 score over all predicted evidence sentences.
+
+          </p>
   
   
         <h3>Registration</h3>
