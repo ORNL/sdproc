@@ -207,19 +207,23 @@
            An example of a claim paired with evidence from a single abstract is shown below.
             <pre>
             <code>
-          {
-              "claim": "ALDH1 expression is associated with poorer prognosis for breast cancer primary tumors.",
-              "evidence": {
-                  // Abstract 30041340 is relevant for verifying this claim.
-                  "30041340": [
-                      // This abstract has 2 evidence sets.
-                      { "sentences": [ 0, 1 ],  // In this evidence set, Sentences 0 and 1, taken together, support the claim.
-                         "label": "SUPPORT" },
-                      { "sentences": [ 11 ],    // In this evidence set, Sentence 11, on its own, supports the claim.
-                         "label": "SUPPORT" }
-                  ]
-              }
-          }
+           {
+             "id": 52,
+             "claim": "ALDH1 expression is associated with poorer prognosis for breast cancer primary tumors.",
+             "evidence": {
+                "11": [                     // 2 evidence sets in document 11 support the claim.
+                   {"sentences": [0, 1],    // Sentences 0 and 1, taken together, support the claim.
+                    "label": "SUPPORT"},
+                   {"sentences": [11],      // Sentence 11, on its own, supports the claim.
+                    "label": "SUPPORT"}
+                ],
+                "15": [                     // A single evidence set in document 15 supports the claim.
+                   {"sentences": [4], 
+                    "label": "SUPPORT"}
+                ]
+             },
+             "cited_doc_ids": [11, 15]
+           }
             </code>
            </pre>
         </p>
@@ -244,15 +248,18 @@
             <pre>
               <code>
           {
-              "claim": "ALDH1 expression is associated with poorer prognosis for breast cancer primary tumors.",
+              "id": 52,
               "evidence": {
-                  // Predicted that abstract 30041340 contains evidence
-                  "30041340": {
-                      "sentences": [ 1, 11, 13 ], // Predicted evidence sentences. 
-                      "label": "SUPPORT"          // Predicted label
+                  "11": {
+                      "sentences": [1, 11, 13],   // Predicted rationale sentences.
+                      "label": "SUPPORT"          // Predicted label.
+                  },
+                  "16": {
+                      "sentences": [18, 20],
+                      "label": "REFUTES"
                   }
               }
-          }
+          }              
               </code>
             </pre>
           </p>
