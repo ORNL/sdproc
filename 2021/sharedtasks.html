@@ -479,12 +479,32 @@
         
         <p>To participate in the 3C Shared Task:</p>
         
-        <dl class="topics">
-          <dd>For subtask A, please visit <a href="https://www.kaggle.com/c/3c-shared-task-purpose-v2/" target="_blank">Kaggle
-              citation purpose </a>classification</dd>
-          <dd>For subtask B, please visit <a href="https://www.kaggle.com/c/3c-shared-task-influence-v2/" target="_blank">Kaggle
-              citation influence </a>classification</dd>
-        </dl>
+        <ul>
+          <li>For subtask A, please visit <a href="https://www.kaggle.com/c/3c-shared-task-purpose-v2/" target="_blank">Kaggle
+              citation purpose </a>classification</li>
+          <li>For subtask B, please visit <a href="https://www.kaggle.com/c/3c-shared-task-influence-v2/" target="_blank">Kaggle
+              citation influence </a>classification</li>
+        </ul>
+
+        <h3 id="submission-guidelines">Submission Guidelines</h3>
+
+        <p>Each team can participate in any of the tasks or all of them. The submission files need to be in CSV format with the following fields:</p>
+
+        <ul>
+          <li><strong>For Subtask A:</strong> unique_id, citation_class_label</li>
+          <li><strong>For Subtask B:</strong> unique_id, citation_influence_label</li>
+        </ul>
+
+        <p>Upload your solutions using kaggle.</p>
+
+        <p>
+          For submitting your paper and code to the 3C Shared task, please register <a href="https://www.softconf.com/naacl2021/sdp2021/">here</a> and use the 3C shared task submission link. 
+          While uploading the paper and code, please use the following naming convention:
+        </p>
+
+        <blockquote class="submission_title">[kaggle-team-name]_SDP2021_task_[A/B]</blockquote>
+
+        <p>where A/B represents the subtask for which you are submitting. If you use the same approach for both subtasks, there is no need to write separate papers.</p>
 
         <!-- <p>
           To address the problem of all citations being treated equally by research metrics, we will run a shared task that will encourage the development of models capable of classifying citations according to their <i>influence</i> and <i>purpose</i>. The shared task will build on our experience from organizing the <a href="https://wosp.core.ac.uk/jcdl2020/shared_task.html#3ctask">3C shared task at WOSP 2020</a>, as well as the <a href="https://biendata.com/competition/wsdm2020/">Citation Intent Classification challenge</a> at WSDM 2020.

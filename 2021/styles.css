@@ -459,3 +459,6 @@ ol#refs > li:before {
   content: "[" counter(list, lower-digit) "] " !important;
   counter-increment: list !important;
 }
+.submission_title {
+  font-size: 11pt;
+}
