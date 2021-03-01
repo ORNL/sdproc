@@ -462,3 +462,7 @@ ol#refs > li:before {
 .submission_title {
   font-size: 11pt;
 }
+.submit-btn {
+  display: inline-block;
+  margin: 27px 10px 0 -10px;
+}
