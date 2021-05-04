@@ -470,3 +470,21 @@ ol#refs > li:before {
 .alert ul li {
   font-size: 20px;
 }
+
+.paper_list .paper_title {
+  font-size: 14pt;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.paper_list .paper_authors {
+  font-size: 14pt;
+}
+
+.program h2 {
+  margin-top: 50px;
+}
+
+.bio_para {
+  margin-top: -10px;
+}
