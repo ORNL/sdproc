@@ -500,3 +500,7 @@ ol#refs > li:before {
 .program tr:hover {
   background-color: #ecf0f1;
 }
+
+.table > tbody > tr > .tz {
+  vertical-align: middle;
+}
