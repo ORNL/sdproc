@@ -494,5 +494,9 @@ ol#refs > li:before {
 }
 
 .table > tbody > tr > .pres-info {
-  padding-left: 30px;
+  padding-left: 40px;
+}
+
+.program tr:hover {
+  background-color: #ecf0f1;
 }
