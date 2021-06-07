@@ -488,3 +488,7 @@ ol#refs > li:before {
 .bio_para {
   margin-top: -10px;
 }
+
+.program, .program td {
+  font-weight: normal;
+}
