@@ -492,3 +492,7 @@ ol#refs > li:before {
 .program, .program td {
   font-weight: normal;
 }
+
+.table > tbody > tr > .pres-info {
+  padding-left: 30px;
+}
