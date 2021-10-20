@@ -445,18 +445,18 @@ ul.nav-sidebar {
   list-style-type: none;
 }
 
-ol#refs {
+ol.refs {
   counter-reset: list !important; 
   margin-left: 0;
   padding-left: 1em;
 }
-ol#refs > li {
+ol.refs > li {
   list-style: none !important;
   margin-bottom: 10px;
   padding-left: 0.7em;
   text-indent: -1.7em;
 }
-ol#refs > li:before {
+ol.refs > li:before {
   content: "[" counter(list, lower-digit) "] " !important;
   counter-increment: list !important;
 }

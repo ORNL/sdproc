@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Second Workshop on Scholarly Document Processing">
 
-  <title>2nd Workshop on Scholarly Document Processing</title>
+  <title>3nd Workshop on Scholarly Document Processing</title>
 
   <!-- Bootstrap core CSS -->
   <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +53,7 @@
         <!-- <h1>The 6<sup>th</sup> Computational Linguistics Scientific Document Summarization Shared
           Task (CL-SciSumm 2020)</h1> -->
 
-        <h1>Shared Tasks: Call for Participation</h1>
+        <h1>Shared Tasks</h1>
 
         <!-- <p>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHzByrog-k299qBuCp3SbPWcb905_kmOWMvHpDH57VLpVrg/viewform"><button type="button" class="btn btn-primary">Shared Tasks Registration</button></a>
@@ -65,13 +65,19 @@
 
         <ul>
           <li>
-            <a href="#longsumm">LongSumm: Generating Long Summaries for Scientific Documents</a>
+            <a href="#mslr">MSLR22: Multi-Document Summarization for Literature Reviews</a>
           </li>
           <li>
-            <a href="#sciver">SCIVER: Verifying Scientific Claims with Evidence</a>
+            <a href="#dagpap">DAGPap22: Detecting automatically generated scientific papers</a>
           </li>
           <li>
-            <a href="#3c">3C: Citation Context Classification</a>
+            <a href="#survey">Survey Variable Identification in Social Science Publications</a>
+          </li>
+          <li>
+            <a href="#skgg">Scholarly Knowledge Graph Generation</a>
+          </li>
+          <li>
+            <a href="#interfaces">NLP for Augmented Reading Interfaces</a>
           </li>
         </ul>
 
@@ -79,497 +85,167 @@
 
         <!-- LongSumm ========================================================= -->
 
-        <h2 id="longsumm">LongSumm 2021: The 2<sup>nd</sup> Shared Task on Generating Long Summaries for Scientific
-          Documents</h2>
-
-        <!-- <p>
-          The LongSumm Shared Task focuses on generating long summaries of scientific articles which require expertise
-          in a scientific domain. To this end, we created a training set that consists of 1,705 extractive summaries,
-          and 700 abstractive summaries of NLP and Machine Learning scientific papers. These are drawn from papers based
-          on video talks from associated conferences (<a href="https://www.aclweb.org/anthology/P19-1204/">TalkSumm</a>)
-          and from blogs created by NLP and ML researchers. Each submission is judged against one reference summary
-          (gold summary) on ROUGE and should not exceed 600 words.
-        </p> -->
+        <h2 id="mslr">MSLR22: Multi-Document Summarization for Literature Reviews</h2>
 
         <p>
-          Most of the work on scientific document summarization focuses on generating relatively short summaries (abstract like). While such a length constraint can be sufficient for summarizing news articles, it is far from sufficient for summarizing scientific work. In fact, such a short summary resembles more to an abstract than to a summary that aims to cover all the salient information conveyed in a given text. Writing such summaries requires expertise and a deep understanding in a scientific domain, as can be found in some researchers blogs.
+          Systematic literature reviews aim to comprehensively summarize evidence from all available studies relevant to a question. 
+          In the context of medicine, such reviews constitute the highest quality evidence used to inform clinical care. However, reviews 
+          are expensive to produce manually; (semi-)automation via NLP may facilitate faster evidence synthesis without sacrificing rigor. 
+          Toward this end, we introduce a dataset of 20k reviews (comprising 470K studies) derived from the literature to study the task of 
+          generating review summaries <a href="#refs-mslr">[1]</a>. For this shared task, each submission is judged against a gold review summary 
+          on ROUGE score and by the evidence-inference-based divergence metric defined in <a href="#refs-mslr">[2]</a>. We also encourage 
+          contributions which extend this task and dataset, e.g., by proposing scaffolding tasks, methods for model interpretability, and 
+          improved automated evaluation methods in this domain.
         </p>
 
-        <p>
-          The LongSumm task opted to leverage blogs created by researchers in the NLP and Machine learning communities and use these summaries as reference summaries to compare the submissions against.
-        </p>
-
-        <p>
-          The corpus for this task includes a training set that consists of 1,705 extractive summaries, and around 700 abstractive summaries of NLP and Machine Learning scientific papers. These are drawn from papers based on video talks from associated conferences (<a href="https://arxiv.org/abs/1906.01351">Lev et al. 2019 TalkSumm</a>) and from blogs created by NLP and ML researchers. In addition, we create a test set of abstractive summaries. Each submission is judged against one reference summary (gold summary) on ROUGE and should not exceed 600 words.
-        </p>
-
-        <p>This is the second year LongSumm is being hosted &mdash; the results from LongSumm @ SDP 2020 are reported on a 
-          <a href="https://aieval.draco.res.ibm.com/challenge/39/leaderboard/39">public leaderboard</a>. In 2021, the
-          task will continue to expand, by incorporating additional summaries.</p>
-
-        <h3>Long Summary Task</h3>
-
-        <p>
-          The task is defined as follows:
-        </p>
-
-        <ul>
-          <li>
-            <strong>Given:</strong> For a detailed description of the provided data, please see the <a href="https://github.com/guyfe/LongSumm#training-data">LongSumm GitHub repository</a>
-          </li>
-          <li>
-            <strong>Task:</strong> Generate abstractive and extractive summaries for scientific papers
-          </li>
-        </ul>
-
-        <h3>Evaluation</h3>
-
-        <p>
-          The Long Summary Task will be scored by using several ROUGE metrics to compare the system output and the gold standard Lay Summary. The intrinsic evaluation will be done by ROUGE, using ROUGE-1, -2, -L and Skipgram metrics. In addition, a randomly selected subset of the summaries will undergo human evaluation.
-        </p>
-
-        <h3>Corpus</h3>
-
-        <p>
-          The training data is composed of abstractive and extractive summaries. To download both datasets, and for further details, see the <a href="https://github.com/guyfe/LongSumm#training-data">LongSumm GitHub repository</a>.
-        </p>
-
-        <!-- <p>
-          The (blind) test dataset will be released on July 15, 2020.
-        </p> -->
+        <ol class="refs" id="refs-mslr"> 
+          <li>Dongyeop Kang, Andrew Head, Risham Sidhu, Kyle Lo, Daniel Weld, and Marti A. Hearst. (2020). "<a href="https://aclanthology.org/2020.sdp-1.22/">Document-level definition detection in scholarly documents: Existingmodels, error analyses, and future directions</a>." Proceedings of the First Workshop on Scholarly Document Processing. Association for Computational Linguistics.</li>
+          <li>Byron C. Wallace, Sayantani Saha, Frank Soboczenski, andIain James Marshall. (2020). "<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8378607/">Generating (factual?) narrative summaries of RCTs: Experiments with neural multi-document summarization</a>." AMIA Annual Symposium.</li>
+        </ol>
 
         <h3>Organizers</h3>
 
-        <p><a href="https://researcher.watson.ibm.com/researcher/view.php?person=il-GUYF">Guy Feigenblat</a>, IBM Research AI</p>
+        <p><a href="https://www.llwang.net/">Lucy Lu Wang</a>, Allen Institute for Artificial Intelligence</p>
 
-        <p><a href="https://researcher.watson.ibm.com/researcher/view.php?person=il-SHMUELI">Michal Shmueli-Scheuer</a>, IBM Research AI</p>
+        <p><a href="https://www.khoury.northeastern.edu/people/jay-deyoung/">Jay DeYoung</a>, Northeaster University</p>
+        
+        <p><a href="https://www.khoury.northeastern.edu/people/byron-wallace/">Byron Wallace</a>, Northeastern University</p>
 
-        <h3>Contact</h3>
+        <!-- <h3>Contact</h3> -->
 
-        <p>Please contact <a href="mailto:shmueli@il.ibm.com">shmueli@il.ibm.com</a> and <a href="mailto:guyf@il.ibm.com">guyf@il.ibm.com</a> with questions about this shared task.</p>
+        <!-- <p>Please contact <a href="mailto:shmueli@il.ibm.com">shmueli@il.ibm.com</a> and <a href="mailto:guyf@il.ibm.com">guyf@il.ibm.com</a> with questions about this shared task.</p> -->
 
         <hr class="featurette-divider">
 
-        <!-- SciVer ========================================================= -->
+        <!-- DAGPap ========================================================= -->
 
-        <h2 id="sciver">SCIVER: Verifying Scientific Claims with Evidence</h2>
+        <h2 id="dagpap">DAGPap22: Detecting automatically generated scientific papers</h2>
 
         <p>
-          Due to the rapid growth in scientific literature, it is difficult for scientists to stay up-to-date on the latest findings. 
-          This challenge is especially acute during pandemics due to the risk of making decisions based on outdated or incomplete information. 
-          There is a need for AI systems that can help scientists with information overload and support scientific fact checking and evidence synthesis.
+          There are increasing reports that research papers can be written by computers, which presents a series of concerns (e.g., see 
+          <a href="refs-dagpap">[1]</a>). In this challenge we explore the state of the art in detecting automatically generated papers. We frame the 
+          detection problem as a binary classification task: given an excerpt of text, label it as either human-written or machine-generated. To 
+          this end we will provide a corpus of over 4,000 automatically written papers, based on the work by Cabanac et al. <a href="refs-dagpap">[2]</a>, 
+          as well as documents collected by our publishing and editorial teams. As a control, we will provide a corpus of openly accessibly 
+          human-written papers from the same scientific domains of documents.
         </p>
-        
+
         <p>
-          In the SCIVER shared task, we will build systems of the form:
-          <ol>
-            <li>Take a scientific claim as input</li>
-            <li>Identify all relevant abstracts in a large corpus</li>
-            <li>Label them as Supporting or Refuting the claim</li>
-            <li>Select sentences as evidence for the label</li>
-          </ol>
-
-        Here’s a <a href="https://scifact.apps.allenai.org/search?Lopinavir%20%2F%20ritonavir%20have%20exhibited%20favorable%20clinical%20responses%20when%20used%20as%20a%20treatment%20for%20coronavirus.">live demo</a> of what such a system could do. 
+          We also encourage contributions that aim to extend this dataset with other computer-generated scientific papers, or paper that propose 
+          valid metrics to assess automatically generated papers against those written by humans.
         </p>
 
-        <h3>Registration and Participation details</h3>
-        <p>
-          To register, please send an email to the organizers at <a href="mailto:sciver-info@allenai.org">sciver-info@allenai.org</a> with:
-          <ul>
-            <li>Team name</li>
-            <li>Participant (full) name(s)</li>
-            <li>Participant affiliation(s)</li>
-            <li>Email(s) for primary contact(s)</li>
-          </ul>
-          Details:
-          <ul>
-            <li>All data and submission portals are already publicly available; registration is simply to help us keep in contact.  Please register before <strong><u>March 17, 2021</u></strong>.</li>
-            <li>Participants will make submissions to the <a href="https://leaderboard.allenai.org/scifact/submissions/public">public leaderboard</a>, which allows <strong>one submission per week</strong>.  Please make sure to finish your leaderboard submissions by <strong><u>March 22, 2021</u></strong>.  The leaderboard will remain open afterwards, but our subsequent report on shared task findings will reflect results up to this point.</li>
-            <li>We invite all participants to submit papers to the <a href="http://sdproc.org/2021/">SDP 2021 workshop</a> for peer review and publication within the <a href="https://www.aclweb.org/anthology/events/emnlp-2020/#2020-sdp-1">ACL Anthology</a>.</li>
-            <ul>
-              <li>Title and Abstract submission deadline is <strong><u>March 17, 2021 (11:59 UTC-12)</u></strong></li>
-              <li>Paper submission deadline is <strong><u>March 22, 2021 (11:59 UTC-12)</u></strong></li>
-              <li>Please make your submission on <a href="https://www.softconf.com/naacl2021/sdp2021/">SoftConf</a>.</li>
-            </ul>
-          </ul>
-        </p>
+        <ol class="refs" id="refs-dagpap"> 
+          <li>Holly Else. (2021). "<a href="https://www.nature.com/articles/d41586-021-02134-0">'Tortured phrases' give away fabricatedresearch papers</a>." Nature.</li>
+          <li>Guillaume Cabanac, Cyril Labb&eacute;, and Alexander Magazinov. (2021). "<a href="https://arxiv.org/abs/2107.06751">Tortured phrases: A dubious writing style emerging in science. Evidence of critical issues affecting established journals</a>."</li>
+        </ol>
 
-      
-        <h3>Dataset</h3>
-        <p>
-          We will use the SciFact dataset of 1,409 expert-annotated biomedical claims verified against 5,183 abstracts from peer-reviewed publications. 
-          <a href="https://github.com/allenai/scifact"><strong>Download the full dataset here</strong></a>.  You can also find baseline models and starter code on the <a href="https://github.com/allenai/scifact">GitHub repo</a>. 
-          Find out more details from the <a href="https://www.aclweb.org/anthology/2020.emnlp-main.609/">EMNLP 2020 paper.</a> 
-        </p>
-      
-        <p>
-          For each claim, we provide:
-          <ul>
-              <li>A list of abstracts from the corpus containing relevant evidence.</li>
-              <li>A label indicating whether each abstract <em>Supports</em> or <em>Refutes</em> the claim.</li>
-              <li>All evidence sets found in each abstract that justify the label. An evidence set is a collection of sentences that, taken together, verifies the claim. Evidence sets can be one or more sentences.</li>
-            </ul>
-        </p>
- 
-         <p>
-           An example of a claim paired with evidence from a single abstract is shown below.
-            <pre>
-            <code>
-           {
-             "id": 52,
-             "claim": "ALDH1 expression is associated with poorer prognosis for breast cancer primary tumors.",
-             "evidence": {
-                "11": [                     // 2 evidence sets in document 11 support the claim.
-                   {"sentences": [0, 1],    // Sentences 0 and 1, taken together, support the claim.
-                    "label": "SUPPORT"},
-                   {"sentences": [11],      // Sentence 11, on its own, supports the claim.
-                    "label": "SUPPORT"}
-                ],
-                "15": [                     // A single evidence set in document 15 supports the claim.
-                   {"sentences": [4], 
-                    "label": "SUPPORT"}
-                ]
-             },
-             "cited_doc_ids": [11, 15]
-           }
-            </code>
-           </pre>
-        </p>
- 
-  
-         <h3>Submission</h3>
-          <p>
-            We will use the <a href="https://leaderboard.allenai.org/scifact/submissions/public">SciFact public leaderboard</a> as the official submission portal for the SciVER task. 
-            Please read the <a href="https://leaderboard.allenai.org/scifact/submissions/get-started">online instructions</a> for how to make submissions.
-          </p>
-          <p>
-            The final evaluation will use test claims with hidden relevant abstracts, labels, and evidence from the same released corpus.
-            For each claim, the system is expected to predict which abstracts contain relevant evidence.
-            Each predicted abstract must be annotated with the following two pieces of information:
-            <ul>
-              <li>A <em><strong>label</strong></em> indicating whether the abstract <em>Supports</em> or <em>Refutes</em> the claim.</li>
-              <li>A list of <em><strong>evidence sentences</strong></em> from the abstract that justify the label.  For simplicity, we only require predicting evidence sentences, not whole evidence sets.</li>
-            </ul>
-          </p>
-          <p>
-            An example prediction is shown below:
-            <pre>
-              <code>
-          {
-              "id": 52,
-              "evidence": {
-                  "11": {
-                      "sentences": [1, 11, 13],   // Predicted rationale sentences.
-                      "label": "SUPPORT"          // Predicted label.
-                  },
-                  "16": {
-                      "sentences": [18, 20],
-                      "label": "REFUTES"
-                  }
-              }
-          }              
-              </code>
-            </pre>
-          </p>
-  
-        <h3>Evaluation</h3>
-          <p>
-            Two evaluation metrics will be used. For a full description, see Section 4 of the 
-            <a href="https://www.aclweb.org/anthology/2020.emnlp-main.609/">SciFact paper</a>.
-          </p>
-
-          <h4>Abstract-level evaluation</h4>
-
-          <p>
-            <emph>Abstract-level</emph> evaluation is similar to the FEVER score, described in 
-            <a href="https://www.aclweb.org/anthology/N18-1074/">the FEVER paper (Thorne et al., 2018)</a>. 
-
-            A predicted abstract is <em>Correct</em> if:
-
-            <ol>
-              <li>The predicted abstract is a relevant abstract.</li>
-              <li>The abstract's predicted <em>Support</em> or <em>Refute</em> label matches its gold label.</li>
-              <li>The abstract's predicted evidence sentences contain at least one full gold evidence set.  Inspired by the FEVER score, the number of predicted sentences is limited to 3.</li>
-            </ol>
-
-            We then compute the F1 score over all predicted abstracts.
-
-          </p>
-          <h4>Sentence-level evaluation</h4>
-
-          <p>
-            <emph>Sentence-level</emph> evaluation scores the correctness of the individual predicted evidence sentences. 
-
-            A predicted sentence <em>Correct</em> if:
-
-            <ol>
-              <li>The abstract containing the sentence is labeled correctly as <em>Support</em> or <em>Refute</em>.</li>
-              <li>The sentence is part of <em>some</em> gold evidence set.</li>
-              <li>All other sentences in that same gold evidence set are also identified by the model as evidence sentences.</li>
-            </ol>
-
-            We then compute the F1 score over all predicted evidence sentences.
-
-          </p>
-  
-        <p>
-          Here's a simple <a href="https://github.com/allenai/scifact/blob/master/doc/evaluation.md">step-by-step example</a> showing how these metrics are calculated.
-        </p>
-
-        <h3>Timeline</h3>
-        <p>
-          <ul>
-            <li>Train & public test set release – December 14, 2020 (registration opens)</li>
-            <li>Open online leaderboard for blind test submissions – January 26, 2021</li>
-            <li>All Title & Abstract submissions due (registration closes) – March 17, 2021 (23:59 UTC-12)</li>
-            <li>All paper submissions due – March 22, 2021 (23:59 UTC-12)</li>
-            <li>Notification of acceptance – April 15, 2021</li>
-            <li>Camera-ready papers due – April 26, 2021</li>
-            <li>Workshop – June 10, 2021</li>
-          </ul>
-        </p>
-    
         <h3>Organizers</h3>
 
-        <p><a href="https://dwadden.github.io/">Dave Wadden</a>, University of Washington</p>
+        <p><a href="https://www.elsevier.com/connect/contributors/anita-de-waard-phd">Anita de Waard</a>, Elsevier</p>
 
-        <p><a href="https://kyleclo.github.io/">Kyle Lo</a>, Allen Institute for Artificial Intelligence (AI2)</p>
+        <p><a href="https://yorko.github.io/">Yury Kashnitsky</a>, Elsevier</p>
 
-        <p><a href="https://beltagy.net/">Iz Beltagy</a>, Allen Institute for Artificial Intelligence (AI2)</p>
+        <hr class="featurette-divider">
 
-        <p><a href="https://www.linkedin.com/in/anitadewaard/">Anita de Waard</a>, Elsevier, USA</p>
+        <!-- 3C ======================================================== -->
 
-        <p><a href="https://tirthankarslg.wixsite.com/ainlpmldl">Tirthankar Ghosal</a>, Indian Institute of Technology Patna, India</p>
+        <h2 id="survey">Survey Variable Identification in Social Science Publications</h2>
 
-        <!-- <p><a href="http://kmi.open.ac.uk/people/member/petr-knoth">Petr Knoth</a>, The Open University, UK</p> -->
+        <p>
+          For this shared task, we focus on concepts specific to social science literature, namely survey variables. We build on the original work of 
+          <a href="refs-survey">[1]</a>, <a href="refs-survey">[2]</a> and propose an evaluation exercise on the task of "Variable Detection and Linking". Survey variable mention 
+          identification in texts can be seen as a multi-label classification problem: Given a sentence in a document (in our case: a scientific 
+          publication in the social sciences), and a list of unique variables (from a reference vocabulary of survey variables), the task is to 
+          classify which variables, if any, are mentioned in each sentence. 
+        </p>
 
-        <!-- <p><a href="https://llwang.net/">Lucy Lu Wang</a>, Allen Institute for Artificial Intelligence (AI2)</p> -->
+        <p>
+          We plan to split the task into two sub-tasks: a) variable detection and b) variable disambiguation. Variable detection deals with identifying 
+          whether a sentence contains a variable mention or not, whereas variable disambiguation focuses on identifying which variable from the 
+          vocabulary is specifically mentioned in a certain sentence.
+        </p>
 
-        <h3>Contact</h3>
+        <p>
+          This task is organized by the VAriable Detection, Interlinking and Summarization (VADIS) project.
+        </p>
 
-        If you have any questions about this shared task, please reach out via email to <a href="mailto:sciver-info@allenai.org">sciver-info@allenai.org</a> 
-        or <a href="mailto:dwadden@cs.washington.edu">dwadden@cs.washington.edu</a> and <a href="mailto:kylel@allenai.org">kylel@allenai.org</a>.
-
-        <h3>References</h3>
-        <ol>
-          <li>Wadden, D., Lin, S., Lo, K., Wang, L.L., Zuylen, M.V., Cohan, A., & Hajishirzi, H. "<a href="https://www.aclweb.org/anthology/2020.emnlp-main.609/">Fact or Fiction: Verifying Scientific Claims</a>." EMNLP (2020).</li>
-          <li>Thorne, J., Vlachos, A., Christodoulopoulos, C., & Mittal, A. "<a href="https://www.aclweb.org/anthology/N18-1074/">FEVER: a large-scale dataset for Fact Extraction and VERification</a>." NAACL (2018).</li>
+        <ol class="refs" id="refs-survey"> 
+          <li>Andrea Zielinski and Peter Mutschke. (2017). "<a href="https://www.ssoar.info/ssoar/handle/document/57722">Mining socialscience publications for survey variables</a>." Proceedings of the Second Workshop on NLP and Computational Social Science. Association for Computational Linguistics (ACL).</li>
+          <li>Andrea Zielinski and Peter Mutschke. (2018). "<a href="https://www.ssoar.info/ssoar/handle/document/57723">Towards a gold standard corpus for variable detection and linking in social science publications</a>." Proceedings of the 11<sup>th</sup> International Conference on Language Resources and Evaluation (LREC). European Language Resources Association (ELRA)</li>
         </ol>
+
+        <h3>Organizers</h3>
+
+        <p><a href="https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/">Simone Paolo Ponzetto</a>, University of Mannheim</p>
+
+        <p><a href="https://www.isi.fraunhofer.de/en/competence-center/innovations-wissensoekonomie/mitarbeiter/zielinski.html">Andrea Zielinski</a>, Fraunhofer ISI</p>
+
+        <p><a href="https://www.torniketsereteli.com/">Tornike Tsereteli</a>, University of Stuttgart</p>
+
+        <p><a href="https://www.linkedin.com/in/yavuz-selim-kartal-4924bb61/">Yavuz Selim Kartal</a>, GESIS</p>
+
+        <p><a href="https://www.gesis.org/en/institute/staff/person/philipp.mayr">Philipp Mayr</a>, GESIS</p>
   
         <hr class="featurette-divider">
 
         <!-- 3C ======================================================== -->
 
-        <h2 id="3c">3C Citation Context Classification</h2>
-
-        <p>Recent years have witnessed a massive increase in the amount of scientific literature and research data being
-          published online, providing revelation about the advancements in the field of different domains. The introduction of
-          aggregator services like CORE <a href="#references">[1]</a> has enabled unprecedented levels of open access to
-          scholarly publications. The availability of full text of the research documents facilitates the possibility of
-          extending the bibliometric studies by identifying the context of the citations <a href="#references">[2]</a>. The
-          shared task organized as part of the SDP 2021 focuses on classifying citation context in research publications based
-          on their influence and purpose.</p>
-        
-        <p><strong>Subtask A:</strong> A task for identifying the purpose of a citation. Multiclass classification of citations into one of six classes: Background, Uses,
-          Compare_Contrast, Motivation, Extension, and Future.</p>
-
-        <p><strong>Subtask B:</strong> A task for identifying the importance of a citation. Binary classification of citations into one of two classes: Incidental, and
-          Influential.</p>
-        
-        <h3>Dataset</h3>
-
-        <p>The participants will be provided with a labeled dataset of 3000 instances annotated using the ACT platform <a
-            href="#references">[3]</a>.</p>
-        <p>The dataset is provided in csv format and contains the following fields:</p>
-        
-        <ul>
-          <li>Unique Identifier</li>
-          <li>COREID of Citing Paper</li>
-          <li>Citing Paper Title</li>
-          <li>Citing Paper Author</li>
-          <li>Cited Paper Title</li>
-          <li>Cited Paper Author</li>
-          <li>Citation Context</li>
-          <li>Citation Class Label</li>
-          <li>Citation Influence Label</li>
-        </ul>
-        
-        <p>Each citation context in the dataset contains an "#AUTHOR_TAG" label, which represents the citation that is being
-          considered. All other fields in the dataset correspond to the values associated with the #AUTHOR_TAG. The possible
-          values of the <strong>citation_class_label</strong> are:</p>
-        
-        <ul>
-          <li>0 - BACKGROUND</li>
-          <li>1 - COMPARES_CONTRASTS</li>
-          <li>2 - EXTENSION</li>
-          <li>3 - FUTURE</li>
-          <li>4 - MOTIVATION</li>
-          <li>5 - USES</li>
-        </ul>
-        
-        <p>and that of <strong>citation_influence_label</strong> are:
-        
-        <ul>
-          <li>0 - INCIDENTAL</li>
-          <li>1 - INFLUENTIAL</li>
-        </ul>
-        
-        </p>
-        <p>The following table shows a sample entry from the training dataset.</p>
-        
-        <table class="table table-striped">
-          <tr>
-            <td>unique_id</td>
-            <td>1998</td>
-          </tr>
-          <tr>
-            <td>core_id</td>
-            <td>81605842</td>
-          </tr>
-          <tr>
-            <td>citing_title</td>
-            <td>Everolimus improves behavioral deficits in a patient with autism associated with tuberous
-              sclerosis: a case report</td>
-          </tr>
-          <tr>
-            <td>citing_author</td>
-            <td>Ryouhei Ishii</td>
-          </tr>
-          <tr>
-            <td>cited_title</td>
-            <td>Learning disability and epilepsy in an epidemiological sample of individuals with tuberous
-              sclerosis complex</td>
-          </tr>
-          <tr>
-            <td>cited_author</td>
-            <td>Joinson</td>
-          </tr>
-          <tr>
-            <td>citation_context</td>
-            <td>West syndrome (infantile spasms) is the common estc epileptic disorder, which is associated
-              with more intellectual disability and a less favorable neurological outcome (#AUTHOR_TAG et al, 2003)</td>
-          </tr>
-          <tr>
-            <td>citation_class_label</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>citation_influence_label</td>
-            <td>1</td>
-          </tr>
-        </table>
-
-        <br />
-
-        <p>A sample training dataset can be downloaded by filling the <a href="https://forms.gle/AjYfMrTzZXjfBjgS6">shared task registration form</a>. The full training dataset will be released shortly via the <a href="https://www.kaggle.com/">Kaggle platform</a>.</p>
-
-        <p>The <a href="http://jurgens.people.si.umich.edu/citation-function/" target="_blank">ACL-ARC</a> dataset <a
-            href="#references">[4]</a>, which is compatible with our ACT dataset can be used by the participants during the
-          competition.</p>
-        
-        <h3>Evaluation</h3>
-
-        <p>The evaluation will be conducted using the withheld test data containing 1000 instances. The evaluation metric used
-          will be the F1-macro score.</p>
-        
-        $$\mbox{F1-macro} = {\frac{1}{n} \sum_{i=1}^{n}{\frac{2 \times P_i \times R_i}{P_i + R_i}}}$$
-        
-        <h3 id="registration">Team Registration</h3>
-
-        <!-- <p>Participants of the shared task need to register their team using <a href="https://forms.gle/AjYfMrTzZXjfBjgS6">this registration form</a>.</p> -->
-        
-        <p>
-          The shared task is hosted on the <a href="https://www.kaggle.com/">Kaggle</a> platform. 
-          Please note that both subtasks will be hosted as separate competitions on Kaggle. 
-          Please make sure you sign in/register on Kaggle before opening the following links.</p>
-        
-        <p>To participate in the 3C Shared Task:</p>
-        
-        <ul>
-          <li>For subtask A, please visit <a href="https://www.kaggle.com/c/3c-shared-task-purpose-v2/" target="_blank">Kaggle
-              citation purpose </a>classification</li>
-          <li>For subtask B, please visit <a href="https://www.kaggle.com/c/3c-shared-task-influence-v2/" target="_blank">Kaggle
-              citation influence </a>classification</li>
-        </ul>
-
-        <h3 id="submission-guidelines">Submission Guidelines</h3>
-
-        <p>Each team can participate in any of the tasks or all of them. The submission files need to be in CSV format with the following fields:</p>
-
-        <ul>
-          <li><strong>For Subtask A:</strong> unique_id, citation_class_label</li>
-          <li><strong>For Subtask B:</strong> unique_id, citation_influence_label</li>
-        </ul>
-
-        <p>Upload your solutions using kaggle.</p>
+        <h2 id="skgg">Scholarly Knowledge Graph Generation</h2>
 
         <p>
-          For submitting your paper and code to the 3C Shared task, please register <a href="https://www.softconf.com/naacl2021/sdp2021/">here</a> and use the 3C shared task submission link. 
-          While uploading the paper and code, please use the following naming convention:
+          With the demise of the widely used Microsoft Academic Graph (MAG) <a href="refs-skgg">[1]</a>, <a href="refs-skgg">[2]</a> at the end of 2021, 
+          the scholarly document processing community is facing a pressing need to replace MAG by an open source community supported service. 
+          A number of challenging data processing tasks are essential for a scalable creation of a comprehensive scholarly graph, i.e. a graph of 
+          entities involving but not limited to research papers, their authors, research organisations and research themes. This shared task will 
+          evaluate three key sub-tasks involved in the generation of a scholarly graph: 1) <i>document deduplication</i>, i.e. identifying and 
+          linking different versions of the same scholarly document, 2) <i>extracting research themes</i>, and 3) <i>affiliation mining</i>, i.e. 
+          linking research papers or their metadata to the organisational entities that produced them. Test and evaluation data will be supplied by the 
+          CORE aggregator <a href="refs-skgg">[3]</a>. 
         </p>
 
-        <blockquote class="submission_title">[kaggle-team-name]_SDP2021_task_[A/B]</blockquote>
-
-        <p>where A/B represents the subtask for which you are submitting. If you use the same approach for both subtasks, there is no need to write separate papers.</p>
-
-        <!-- <p>
-          To address the problem of all citations being treated equally by research metrics, we will run a shared task that will encourage the development of models capable of classifying citations according to their <i>influence</i> and <i>purpose</i>. The shared task will build on our experience from organizing the <a href="https://wosp.core.ac.uk/jcdl2020/shared_task.html#3ctask">3C shared task at WOSP 2020</a>, as well as the <a href="https://biendata.com/competition/wsdm2020/">Citation Intent Classification challenge</a> at WSDM 2020.
-        </p>
-
-        <p>
-          Three existing datasets will be used: 
-        </p>
-
-        <ul>
-          <li>the <a href="http://oro.open.ac.uk/70520/">ACT dataset</a> (over 11 thousand author annotated citation contexts),</li>
-          <li><a href="https://dl.acm.org/doi/abs/10.1145/2740908.2742839">Microsoft Academic Graph</a> (a dataset of scientific publication records with citation links and contexts) and</li>
-          <li>the <a href="http://oro.open.ac.uk/55987/">TrueImpactDataset</a> (a dataset of research papers annotated as seminal or survey).</li>
-        </ul>
-
-        <p>
-          In addition to subtasks 1 and 2 introduced in 3C 2020, we will include a new subtask focused on classification of publications into seminal and survey categories according to the context in which they are cited. 3C 2020 saw 3 teams participate in subtask 1 and 4 teams in subtask 2, while WSDM Cup 2020 saw 99 teams participate in the challenge.
-        </p> -->
-
-        <h3>Timeline</h3>
-        <p>
-          <ul>
-            <li><del>Kaggle competition start date &mdash; February 26, 2021</del></li>
-            <li><del>Kaggle competition end date &mdash; April 30, 2021</del></li>
-            <li>Paper and code submission deadline &mdash; <del>May 10, 2021 (23:59, UTC-12)</del> <strong>May 17, 2021 (23:59, UTC-12) (new deadline)</strong></li>
-            <li>Notification of acceptance &mdash; May 25, 2021</li>
-            <li>Camera-ready papers due &mdash; June 3, 2021</li>
-            <li>Workshop &mdash; June 10, 2021</li>
-          </ul>
-        </p>
+        <ol class="refs" id="refs-skgg"> 
+          <li>Kuansan Wang, Zhihong Shen, Chiyuan Huang, Chieh-Han Wu, Yuxiao Dong, and Anshul Kanakia. (2020). "<a href="https://direct.mit.edu/qss/article/1/1/396/15572/Microsoft-Academic-Graph-When-experts-are-not">Microsoft academic graph: When experts are not enough</a>." Quantitative Science Studies. MIT Press Direct.</li>
+          <li>Drahomira Herrmannova and Petr Knoth. (2016). "<a href="https://dlib.org/dlib/september16/herrmannova/09herrmannova.print.html">An analysis of the microsoft academic graph</a>." D-Lib Magazine.</li>
+          <li>Petr Knoth and Zdenek Zdrahal. (2012). "<a href="http://www.dlib.org/dlib/november12/knoth/11knoth.print.html">Core: three access levels to underpin open access</a>." D-Lib Magazine.</li>
+        </ol>
 
         <h3>Organizers</h3>
 
-        <p><a href="http://kmi.open.ac.uk/people/member/petr-knoth">Petr Knoth</a>, Open University, UK</p>
+        <p><a href="https://www.open.ac.uk/people/pk3295">Petr Knoth</a>, Open University</p>
 
-        <p><a href="http://kmi.open.ac.uk/people/member/suchetha-n-kunnath">Suchetha N. Kunnath</a>, Open University, UK</p>
+        <p><a href="https://dasha.tech">Drahomira Herrmannova</a>, Oak Ridge National Laboratory</p>
 
-        <p><a href="http://kmi.open.ac.uk/people/member/david-pride">David Pride</a>, Open University, UK</p>
+        <p><a href="https://www.linkedin.com/in/ronin-wu-66221226/">Ronin Wu</a>, Iris.ai</p>
 
-        <p><a href="https://www.microsoft.com/en-us/research/people/kuansanw/">Kuansan Wang</a>, Microsoft Research</p>
+        <p><a href="http://kmi.open.ac.uk/people/member/david-pride">David Pride</a>, Open University</p>
+  
+        <hr class="featurette-divider">
 
-        <p><a href="https://www.ornl.gov/staff-profile/drahomira-herrmannova">Dasha Herrmannova</a>, Oak Ridge National Laboratory</p>
+        <!-- 3C ======================================================== -->
 
-        <h3>Contact</h3>
+        <h2 id="interfaces">NLP for Augmented Reading Interfaces</h2>
 
-        <p>If you have any questions about this shared task, please contact <a href="mailto:david.pride@open.ac.uk">david.pride@open.ac.uk</a> and <a href="mailto:suchetha.nambanoor-kunnath@open.ac.uk">suchetha.nambanoor-kunnath@open.ac.uk</a>.</p>
+        <p>
+          Despite the formidable knowledge a researcher gains over the course of their career, they often still find that papers can be 
+          prohibitively difficult to read. While augmented reading interfaces have proven useful for helping scholars digest content and 
+          minimize distractions while reading <a href="refs-interfaces">[1]</a>, the information extraction and summarization models needed to power these 
+          interfaces currently fall short <a href="refs-interfaces">[2]</a>. This shared task provides real-world data and software to support 
+          development of methods for (1) <i>symbol, term, and acronym definition</i> and (2) <i>key passage highlighting</i>. 
+        </p>
 
-        <!-- <p><a href="http://dasha.tech">Drahomira Herrmannova</a>, Oak Ridge National Laboratory</p> -->
-
-        <h3>References</h3>
-
-        <ol id="refs">
-          <li>Knoth, Petr and Zdrahal, Zdenek. "<a href="http://www.dlib.org/dlib/november12/knoth/11knoth.html">CORE: three access levels to underpin open access</a>." D-Lib Magazine 18.11/12 (2012): 1-13.</li>
-          <li>Pride, David and Knoth, Petr. "<a href="http://oro.open.ac.uk/51751/">Incidental or influential? &mdash; A decade of using text-mining for citation function classification</a>." (2017).</li>
-          <li>Pride, David, Knoth, Petr and Harag, Jozef. "<a href="https://ieeexplore.ieee.org/abstract/document/8791134">ACT: An Annotation Platform for Citation Typing at Scale</a>." 2019 ACM/IEEE Joint Conference on Digital Libraries (JCDL). IEEE, 2019.</li>
-          <li>Jurgens, David, et al. "<a href="https://www.mitpressjournals.org/doi/abs/10.1162/tacl_a_00028">Measuring the evolution of a scientific field through citation frames</a>." Transactions of the Association for Computational Linguistics 6 (2018): 391-406.</li>
+        <ol class="refs" id="refs-interfaces"> 
+          <li>Andrew Head, Kyle Lo, Dongyeop Kang, Raymond Fok, Sam Skjonsberg, Daniel S. Weld, and Marti A. Hearst. (2021). "<a href="https://dl.acm.org/doi/10.1145/3411764.3445648">Augmenting Scientific Papers with Just-in-Time, Position-Sensitive Definitions of Terms and Symbols</a>." Association for Computing Machinery.</li>
+          <li>Dongyeop Kang, Andrew Head, Risham Sidhu, Kyle Lo, Daniel Weld, and Marti A. Hearst. (2020). "<a href="https://aclanthology.org/2020.sdp-1.22/">Document-level definition detection in scholarly documents: Existing models, error analyses, and future directions.</a>." Proceedings of the First Workshop on Scholarly Document Processing. Association for Computational Linguistics.</li>
         </ol>
 
-        <!-- <hr class="featurette-divider"> -->
+        <h3>Organizers</h3>
+
+        <p><a href="https://kyleclo.github.io/">Kyle Lo</a>, Allen Institute for AI</p>
+
+        <p><a href="https://andrewhead.info/">Andrew Head</a>, University of California, Berkeley</p>
+
+        <p><a href="https://people.ischool.berkeley.edu/~hearst/">Marti Hearst</a>, University of California, Berkeley</p>
 
         <!-- IMPORTANT DATES ========================================================= -->
 

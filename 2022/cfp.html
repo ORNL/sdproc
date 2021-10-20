@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Second Workshop on Scholarly Document Processing">
 
-  <title>2nd Workshop on Scholarly Document Processing</title>
+  <title>3nd Workshop on Scholarly Document Processing</title>
 
   <!-- Bootstrap core CSS -->
   <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
@@ -50,9 +50,9 @@
 
         <!-- CALL FOR PAPERS ============================================= -->
 
-        <h1>Call for Papers</h1>
+        <h1>About the workshop</h1>
 
-        <h2 id="updates">Important updates</h2>
+        <!-- <h2 id="updates">Important updates</h2>
 
         <ul>
           <li><a href="https://www.softconf.com/naacl2021/sdp2021/">Submission site</a> is now available. All deadlines below are at 23:59 UTC-12 (Anywhere on Earth).</li>
@@ -62,43 +62,42 @@
           <li>The 3C shared task ends on <strong>April 30, 2021</strong>. The submission deadline for the 3C shared task is <strong>May 10, 2021</strong>.</li>
           <li>Papers must follow the <a href="https://2021.naacl.org/calls/style-and-formatting/">NAACL Format</a> and conform to the <a href="https://2021.naacl.org/calls/papers/first/">NAACL Submission Guidelines</a>.</li>
           <li>Paper submission has to be done through the <a href="https://www.softconf.com/naacl2021/sdp2021/">SoftConf system</a>.</li>
-        </ul>
+        </ul> -->
 
         <h2 id="intro">Introduction</h2>
 
         <p>
-          Although scientific literature plays a major part in research and policy-making, these texts represent an underserved area of NLP. 
-          NLP can play a role in addressing research information overload, identifying disinformation and its effect on people and society, and 
-          enhancing the reproducibility of science. The unique challenges of processing scholarly documents necessitate the development of specific 
-          methods and resources optimized for this domain. The Scholarly Document Processing (SDP) workshop provides a venue for discussing these 
-          challenges, bringing together stakeholders from different communities including computational linguistics, text mining, information 
-          retrieval, digital libraries, scientometrics, and others to develop and present methods and resources in support of these goals.
+          Although scholarly literature plays a major part in research and policy-making, these texts represent an underserved area of NLP. 
+          The unique challenges of processing scholarly documents necessitate the development of NLP methods and resources optimized for this domain. 
+          The SDP workshop provides a venue for discussing these challenges, bringing together stakeholders from different communities including 
+          computational linguistics, text mining, information retrieval, digital libraries, scientometrics, and others to develop methods and 
+          resources in support of these goals.
         </p>
 
         <p>
-          This workshop builds on the success of prior workshops: <a href="https://ornlcda.github.io/SDProc/">the
-            1<sup>st</sup> SDP workshop</a> held at <a href="https://2020.emnlp.org/">EMNLP 2020</a>, and <a
-            href="https://scinlp.org/">the 1<sup>st</sup> SciNLP workshop</a> held at <a
-            href="https://www.akbc.ws/2020/">AKBC 2020</a>. In addition to having broad appeal within the NLP community, 
-          we hope the SDP workshop will attract researchers from other relevant fields including meta-science, scientometrics, 
-          data mining, information retrieval, and digital libraries, bringing together these disparate communities within ACL.
+          SDP 2022 builds on the success of prior workshops: the 1<sup>st</sup> and 2<sup>nd</sup> SDP workshops (held at 
+          <a href="https://ornlcda.github.io/SDProc/">EMNLP 2020</a> and <a href="https://sdproc.org/2021/">NAACL 2021</a>), 
+          and the SciNLP workshops held at <a href="https://scinlp.org/history/2020/">AKBC 2020</a> and <a href="https://scinlp.org/">2021</a>. 
+          These workshops received numerous submissions and were well attended (statistics below), demonstrating high interest in this application area.
         </p>
+
+        <p>This workshop will accept direct submissions as well as papers submitted through ACL Rolling Review.</p>
 
         <!-- TOPICS ============================================= -->
 
         <h2 id="topics">Topics of interest</h2>
 
         <p>
-          We invite submissions from all communities demonstrating usage of and challenges associated with natural language processing, 
-          information retrieval, and data mining of scholarly and scientific documents. Relevant tasks include:
+          To encourage participants from all relevant communities, SDP invites a diversity of submission topics demonstrating usage of and 
+          challenges associated with processing scholarly texts. 
         </p>
 
         <ul>
           <li>Representation learning</li>
           <li>Information extraction</li>
+          <li>Document understanding</li>
           <li>Summarization</li>
-          <li>Generation</li>
-          <li>Question answering</li>
+          <li>Question-answering</li>
           <li>Discourse modeling and argumentation mining</li>
           <li>Network analysis</li>
           <li>Bibliometrics, scientometrics, and altmetrics</li>
@@ -106,19 +105,18 @@
           <li>Peer review</li>
           <li>Search and indexing</li>
           <li>Datasets and resources</li>
-          <li>Document parsing</li>
           <li>Text mining</li>
           <li>Research infrastructure, and others.</li>
         </ul>
 
         <p>
-          We specifically invite research on important and/or underserved areas, such as:
+          We specifically invite research on important or underserved areas, such as:
         </p>
 
         <ol>
-          <li>Identifying/mitigating scientific disinformation and its effects on public policy and behavior</li>
-          <li>Reducing information overload through summarization and aggregation of information within and across documents</li>
-          <li>Improving access to scientific papers through multilingual scholarly document processing</li>
+          <li>Reducing information overload through single or multi-document summarization</li>
+          <li>Multilingual scholarly document processing</li>
+          <li>User-centered NLP systems for supporting scholarly research</li>
         </ol>
 
         <h2 id="inclusivity">Inclusivity</h2>
@@ -137,12 +135,21 @@
         </p>
 
         <ol>
-          <li><a href="sharedtasks.html#longsumm">LongSumm 2021</a>: The 2<sup>nd</sup> Shared Task on Generating Long
-            Summaries for Scientific Documents</li>
-          <li><a href="sharedtasks.html#sciver">SciVer 2021</a>: The 1<sup>st</sup> Shared Task on Rationalized
-            Verification of Scientific Claims</li>
-          <li><a href="sharedtasks.html#3c">3C 2021</a>: The 2<sup>nd</sup> Shared Task on Citation Context
-            Classification</li>
+          <li>
+            <a href="#mslr">MSLR22: Multi-Document Summarization for Literature Reviews</a>
+          </li>
+          <li>
+            <a href="#dagpap">DAGPap22: Detecting automatically generated scientific papers</a>
+          </li>
+          <li>
+            <a href="#survey">Survey Variable Identification in Social Science Publications</a>
+          </li>
+          <li>
+            <a href="#skgg">Scholarly Knowledge Graph Generation</a>
+          </li>
+          <li>
+            <a href="#interfaces">NLP for Augmented Reading Interfaces</a>
+          </li>
         </ol>
 
         <p>
@@ -156,7 +163,9 @@
 
         <h2 id="submission">Submission Information</h2>
 
-        <p>
+        <p>Submission information and important dates will be released in due time.</p>
+
+        <!-- <p>
           Authors are invited to submit full and short papers with unpublished, original work. Submissions will be subject to a double-blind 
           peer review process. Accepted papers will be presented by the authors at the workshop either as a talk or a poster. All accepted 
           papers will be published in the workshop proceedings.
@@ -186,7 +195,7 @@
         <p>
           Final versions of accepted papers will be allowed 1 additional page of content so that reviewer comments can
           be taken into account.
-        </p>
+        </p> -->
 
         <p>
           To receive updates, please join our <a href="https://groups.google.com/g/sdproc-updates">mailing list</a> or follow us on <a href="https://twitter.com/sdproc">Twitter</a>.
@@ -198,7 +207,7 @@
           by April 30th, 2020 (remains open till evaluation window starts). For more information please see the <a href="sharedtasks.html">shared tasks page</a>.
         </p> -->
 
-        <h2 id="dates">Important Dates</h2>
+        <!-- <h2 id="dates">Important Dates</h2>
 
         <p>The dates are at this stage indicative only and can change. The current dates are up-to-date as of March 15, 2021.</p>
 
@@ -231,7 +240,7 @@
               <td>June 10, 2021</td>
             </tr>
           </tbody>
-        </table>
+        </table> -->
 
         <!-- <h4>Shared Task Track</h4>
         <table class="table table-striped">
@@ -280,7 +289,7 @@
           In the past, the accepted authors were invited to submit an extended version of their work to a special issue of a selected journal. The organizers are currently in the process of identifying appropriate journals to host a similar special issue this year. Relevant updates including topics and requirements for this special issue will be shared on the workshop website in due time.
         </p> -->
 
-        <h2 id="keynotes">Keynote Speakers</h2>
+        <!-- <h2 id="keynotes">Keynote Speakers</h2>
 
         <p>We are excited to have 3 keynote speakers at SDP 2021:</p>
 
@@ -290,7 +299,7 @@
             <li><a href="https://www.cs.bgu.ac.il/~yoavg/uni/">Yoav Goldberg</a>, Bar Ilan University and AI2 Israel</li>
             <li><a href="http://isabelleaugenstein.github.io/">Isabelle Augenstein</a>, University of Copenhagen</li>
           </ul>
-        </p>
+        </p> -->
 
       </div>
 
@@ -304,13 +313,13 @@
           <li><a href="cfp.html#inclusivity">Inclusivity</a></li>
           <li><a href="cfp.html#sharedtasks">Shared Tasks</a></li>
           <li><a href="cfp.html#submission">Submission Information</a></li>
-          <li><a href="cfp.html#dates">Important Dates</a></li>
-          <li><a href="cfp.html#keynotes">Keynote Speakers</a></li>
+          <!-- <li><a href="cfp.html#dates">Important Dates</a></li> -->
+          <!-- <li><a href="cfp.html#keynotes">Keynote Speakers</a></li> -->
         </ul>
 
         <hr />
 
-        <h3>Quick Links</h3>
+        <!-- <h3>Quick Links</h3>
         <a href="https://2021.naacl.org/calls/style-and-formatting/">
           NAACL 2021 formatting requirements
         </a>
@@ -337,7 +346,7 @@
         </p>
         <p>
           Workshop &ndash; June 10
-        </p>
+        </p> -->
 
         <h3>Sing up for updates</h3>
 
@@ -345,7 +354,7 @@
 
         <h3>Contact</h3>
 
-        <p>Please contact <a href="mailto:sdproc2021@googlegroups.com">sdproc2021@googlegroups.com</a> with any questions
+        <p>Please contact <a href="mailto:sdproc2022@googlegroups.com">sdproc2022@googlegroups.com</a> with any questions
           regarding the workshop.</p>
       </div>
     </div>
@@ -357,7 +366,7 @@
     <footer>
       <div class="footer-wrapper">
         <div class="footer-left">
-          <p>Contact: <a href="mailto:sdproc2021@googlegroups.com">sdproc2021@googlegroups.com</a></p>
+          <p>Contact: <a href="mailto:sdproc2022@googlegroups.com">sdproc2022@googlegroups.com</a></p>
           <p>Sign up for updates: <a href="https://groups.google.com/g/sdproc-updates">https://groups.google.com/g/sdproc-updates</a></p>
           <p>Follow us: <a href="https://twitter.com/sdproc">https://twitter.com/SDProc</a></p>
         </div>
