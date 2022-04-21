@@ -88,21 +88,22 @@
 
         <!-- LongSumm ========================================================= -->
 
-        <h2 id="mslr">MSLR22: Multi-Document Summarization for Literature Reviews</h2>
+        <h2 id="mslr"><a href="https://github.com/allenai/mslr-shared-task">MSLR22: Multi-Document Summarization for Literature Reviews</a></h2>
 
         <p>
           Systematic literature reviews aim to comprehensively summarize evidence from all available studies relevant to a question.
           In the context of medicine, such reviews constitute the highest quality evidence used to inform clinical care. However, reviews
-          are expensive to produce manually; (semi-)automation via NLP may facilitate faster evidence synthesis without sacrificing rigor.
-          Toward this end, we introduce a dataset of 20k reviews (comprising 470K studies) derived from the literature to study the task of
-          generating review summaries <a href="#refs-mslr">[1]</a>. For this shared task, each submission is judged against a gold review summary
-          on ROUGE score and by the evidence-inference-based divergence metric defined in <a href="#refs-mslr">[2]</a>. We also encourage
+          are expensive to produce manually; (semi-)automation via NLP may facilitate faster evidence synthesis without sacrificing rigor. We introduce the task of multi-document summarization for generating review summaries. This task uses two datasets of review summaries derived from the scientific literature <a href="#refs-mslr">[1]</a><a href="#refs-mslr">[2]</a>. Participating teams are evaluated using automated and human evaluation metrics. We also encourage
           contributions which extend this task and dataset, e.g., by proposing scaffolding tasks, methods for model interpretability, and
           improved automated evaluation methods in this domain.
         </p>
 
         <p>
-          Dataset link (more info to come): <a href="https://github.com/allenai/ms2">https://github.com/allenai/ms2</a>
+          Details about data access, task evaluation, and more are available <a href="https://github.com/allenai/mslr-shared-task">here</a>.
+        </p>
+
+        <p>
+          Please join our <a href="https://groups.google.com/g/mslr-info">mailing list</a> to receive updates or email <a href="mailto:lucyw@allenai.org">lucyw@allenai.org</a> to be added to our Slack workspace.
         </p>
 
         <ol class="refs" id="refs-mslr">
@@ -117,6 +118,8 @@
         <p><a href="https://www.khoury.northeastern.edu/people/jay-deyoung/">Jay DeYoung</a>, Northeastern University</p>
 
         <p><a href="https://www.khoury.northeastern.edu/people/byron-wallace/">Byron Wallace</a>, Northeastern University</p>
+
+        <p>Please email <a href="mailto:mslr-organizers@googlegroups.com">mslr-organizers@googlegroups.com</a> to contact the organizers.</p>
 
         <!-- <h3>Contact</h3> -->
 
@@ -203,9 +206,9 @@
         </p>
 
         <p>
-          This task is organized by the VAriable Detection, Interlinking and Summarization (VADIS) project. 
+          This task is organized by the VAriable Detection, Interlinking and Summarization (VADIS) project.
         </p>
-        
+
          <p>
           Link to the SV-Ident 2022 page (more info to come): <a href="https://vadis-project.github.io/sv-ident-sdp2022/">https://vadis-project.github.io/sv-ident-sdp2022/</a>
         </p>
@@ -249,11 +252,11 @@
           <li>Drahomira Herrmannova and Petr Knoth. (2016). "<a href="https://dlib.org/dlib/september16/herrmannova/09herrmannova.print.html">An analysis of the microsoft academic graph</a>." D-Lib Magazine.</li>
           <li>Petr Knoth and Zdenek Zdrahal. (2012). "<a href="http://www.dlib.org/dlib/november12/knoth/11knoth.print.html">Core: three access levels to underpin open access</a>." D-Lib Magazine.</li>
         </ol>
-        
+
         <h3>Preregistration</h3>
-          
+
         <p>
-          <a href="https://forms.gle/7nduU6meseEpv9i69">Pre-register your team here</a> and we'll keep you posted with competition updates and timelines. 
+          <a href="https://forms.gle/7nduU6meseEpv9i69">Pre-register your team here</a> and we'll keep you posted with competition updates and timelines.
         </p>
 
         <h3>Organizers</h3>
@@ -273,10 +276,10 @@
         <h2 id="mup">Multi Perspective Scientific Document Summarization</h2>
 
         <p>
-          Generating summaries of scientific documents is known to be a challenging task. Majority of existing work in summarization assumes only one single best gold 
-          summary for each given document. Having only one gold summary negatively impacts our ability to evaluate the quality of summarization systems as writing summaries 
-          is a subjective activity. At the same time, annotating multiple gold summaries for scientific documents can be extremely expensive as it requires domain experts to 
-          read and understand long scientific documents. This shared task will enable exploring methods for generating multi-perspective summaries. We introduce a novel 
+          Generating summaries of scientific documents is known to be a challenging task. Majority of existing work in summarization assumes only one single best gold
+          summary for each given document. Having only one gold summary negatively impacts our ability to evaluate the quality of summarization systems as writing summaries
+          is a subjective activity. At the same time, annotating multiple gold summaries for scientific documents can be extremely expensive as it requires domain experts to
+          read and understand long scientific documents. This shared task will enable exploring methods for generating multi-perspective summaries. We introduce a novel
           summarization corpus, leveraging data from scientific peer reviews to capture diverse perspectives from the reader's point of view.
         </p>
 
