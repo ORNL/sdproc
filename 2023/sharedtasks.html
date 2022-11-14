@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3rd Workshop on Scholarly Document Processing">
+
+  <title>3rd Workshop on Scholarly Document Processing</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fira Sans font -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- Custom styles for this template -->
+  <link href="styles.css" rel="stylesheet">
+
+  <!-- icons -->
+  <link rel="stylesheet" href="./font-awesome-4.1.0/css/font-awesome.min.css">
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR ================================================== -->
+
+  <div class="navbar-wrapper"></div>
+  <script src="menu.js" type="text/javascript"></script>
+
+  <!-- MAIN CONTENT ============================================= -->
+
+  <div class="container marketing navbar-spacing">
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- CFP INTRODUCTION ================================================== -->
+
+        <!-- <h1>The 6<sup>th</sup> Computational Linguistics Scientific Document Summarization Shared
+          Task (CL-SciSumm 2020)</h1> -->
+
+        <h1>Shared Tasks</h1>
+
+        <!-- <p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHzByrog-k299qBuCp3SbPWcb905_kmOWMvHpDH57VLpVrg/viewform"><button type="button" class="btn btn-primary">Shared Tasks Registration</button></a>
+        </p>
+
+        <hr class="featurette-divider"> -->
+
+        <h2>Quick links</h2>
+
+        <ul>
+          <li>
+            <a href="#mslr">MSLR22: Multi-Document Summarization for Literature Reviews</a>
+          </li>
+          <li>
+            <a href="#dagpap">DAGPap22: Detecting automatically generated scientific papers</a>
+          </li>
+          <li>
+            <a href="#longsumm">LongSumm 2022: Generating Long Summaries for Scientific Documents</h2>
+          </li>
+          <li>
+            <a href="#survey">SV-Ident 2022: Survey Variable Identification in Social Science Publications</a>
+          </li>
+          <li>
+            <a href="#skgg">Scholarly Knowledge Graph Generation</a>
+          </li>
+          <li>
+            <a href="#mup">Multi Perspective Scientific Document Summarization</a>
+          </li>
+        </ul>
+
+        <hr class="featurette-divider">
+
+        <!-- LongSumm ========================================================= -->
+
+        <h2 id="mslr"><a href="https://github.com/allenai/mslr-shared-task">MSLR22: Multi-Document Summarization for Literature Reviews</a></h2>
+
+        <p>
+          Systematic literature reviews aim to comprehensively summarize evidence from all available studies relevant to a question.
+          In the context of medicine, such reviews constitute the highest quality evidence used to inform clinical care. However, reviews
+          are expensive to produce manually; (semi-)automation via NLP may facilitate faster evidence synthesis without sacrificing rigor. We introduce the task of multi-document summarization for generating review summaries. This task uses two datasets of review summaries derived from the scientific literature <a href="#refs-mslr">[1]</a><a href="#refs-mslr">[2]</a>. Participating teams are evaluated using automated and human evaluation metrics. We also encourage
+          contributions which extend this task and dataset, e.g., by proposing scaffolding tasks, methods for model interpretability, and
+          improved automated evaluation methods in this domain.
+        </p>
+
+        <p>
+          Details about data access, task evaluation, and more are available <a href="https://github.com/allenai/mslr-shared-task">here</a>.
+        </p>
+
+        <p>
+          Please join our <a href="https://groups.google.com/g/mslr-info">mailing list</a> to receive updates or email <a href="mailto:lucyw@allenai.org">lucyw@allenai.org</a> to be added to our Slack workspace.
+        </p>
+
+        <ol class="refs" id="refs-mslr">
+          <li>DeYoung, Jay, Iz Beltagy, Madeleine van Zuylen, Bailey Kuehl and Lucy Lu Wang. "<a href="https://aclanthology.org/2021.emnlp-main.594/">MS2: A Dataset for Multi-Document Summarization of Medical Studies</a>." EMNLP (2021).</li>
+          <li>Byron C. Wallace, Sayantani Saha, Frank Soboczenski, and Iain James Marshall. (2020). "<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8378607/">Generating (factual?) narrative summaries of RCTs: Experiments with neural multi-document summarization</a>." AMIA Annual Symposium.</li>
+        </ol>
+
+        <h3>Organizers</h3>
+
+        <p><a href="https://www.llwang.net/">Lucy Lu Wang</a>, Allen Institute for AI</p>
+
+        <p><a href="https://www.khoury.northeastern.edu/people/jay-deyoung/">Jay DeYoung</a>, Northeastern University</p>
+
+        <p><a href="https://www.khoury.northeastern.edu/people/byron-wallace/">Byron Wallace</a>, Northeastern University</p>
+
+        <p>Please email <a href="mailto:mslr-organizers@googlegroups.com">mslr-organizers@googlegroups.com</a> to contact the organizers.</p>
+
+        <!-- <h3>Contact</h3> -->
+
+        <!-- <p>Please contact <a href="mailto:shmueli@il.ibm.com">shmueli@il.ibm.com</a> and <a href="mailto:guyf@il.ibm.com">guyf@il.ibm.com</a> with questions about this shared task.</p> -->
+
+        <hr class="featurette-divider">
+
+        <!-- DAGPap ========================================================= -->
+
+        <h2 id="dagpap">DAGPap22: Detecting automatically generated scientific papers</h2>
+
+        <p>
+          There are increasing reports that research papers can be written by computers, which presents a series of concerns (e.g., see
+          <a href="refs-dagpap">[1]</a>). In this challenge we explore the state of the art in detecting automatically generated papers. We frame the
+          detection problem as a binary classification task: given an excerpt of text, label it as either human-written or machine-generated. To
+          this end we are releasing a corpus of over 4000 excerpts from automatically written papers, based on the work by Cabanac et al. 
+          <a href="refs-dagpap">[2]</a>, as well as documents collected by our publishing and editorial teams. As a test set, the participants are provided with
+          a 5x larger corpus of openly accessible human-written as well as generated papers from the same scientific domains of documents. 
+        </p>
+
+        <p>
+          We also encourage contributions that aim to extend this dataset with other computer-generated scientific papers, or papers that propose 
+          valid metrics to assess automatically generated papers against those written by humans.
+        </p>
+
+        <ol class="refs" id="refs-dagpap">
+          <li>Holly Else. (2021). "<a href="https://www.nature.com/articles/d41586-021-02134-0">'Tortured phrases' give away fabricated research papers</a>." Nature.</li>
+          <li>Guillaume Cabanac, Cyril Labb&eacute;, and Alexander Magazinov. (2021). "<a href="https://arxiv.org/abs/2107.06751">Tortured phrases: A dubious writing style emerging in science. Evidence of critical issues affecting established journals</a>."</li>
+        </ol>
+
+        <h3>How to participate</h3>
+
+        <p>The competition is now <a href="http://www.kaggle.com/c/detecting-generated-scientific-papers">
+          live on the Kaggle platform</a>.</p>
+
+        <h3>Evaluation criteria</h3>
+
+        <p>The DAGPap Shared Task is scored using standard binary classification evaluation metrics. 
+          Each excerpt should be labeled as <i>human-written</i> or <i>machine-generated</i>. We then compute the F1 score over all test excerpts.</p>
+
+        <h3>Submitting a publication to the workshop</h3>
+
+        <p>All participants are encouraged to submit publications describing their solutions to the SDP 2022 workshop. Please follow the 
+          <a href="https://sdproc.org/2022/cfp.html#submission">SDP 2022 workshop submission instructions</a> when submitting to the shared task.</p> 
+
+        <h3>Important dates</h3>
+
+        <ul>
+          <li>Competition start date &mdash; June 10, 2022</li>
+          <li>Abstract submission deadline &mdash; July 25, 2022</li>
+          <li>Competition end date &mdash; August 8, 2022</li>
+          <li>Paper submission deadline &mdash; August 15, 2022</li>
+          <li>Paper acceptance notification &mdash; August 22, 2022</li>
+          <li>Camera ready deadline &mdash; September 5, 2022</li>
+          <li>Workshop &mdash; October 16/17, 2022</li>
+        </ul>
+
+        <h3>Contact</h3>
+
+        <p>For any questions about the competition please use the <a href="https://www.kaggle.com/competitions/detecting-generated-scientific-papers/discussion">
+          competition discussion forum</a>. For any other questions (about paper submission, the workshop, etc.) please contact 
+          <a href="mailto:dagpap2022@googlegroups.com">dagpap2022@googlegroups.com</a>.</p>
+
+        <h3>Organizers</h3>
+
+        <p><a href="https://yorko.github.io/">Yury Kashnitsky</a>, Elsevier</p>
+
+        <p><a href="https://www.elsevier.com/connect/contributors/anita-de-waard-phd">Anita de Waard</a>, Elsevier</p>
+
+        <!-- <p><a href="https://www.irit.fr/~Guillaume.Cabanac/">Guillaume  Cabanac</a>, University of Toulouse</p> -->
+
+        <p><a href="https://membres-lig.imag.fr/labbe/">Cyrill Labb&eacute;</a>, Universit&eacute; Grenoble</p>
+
+        <!-- <p><a href="https://yandex.com/">Alexander Magazinov</a>, Yandex</p> -->
+
+        <p><a href="https://www.linkedin.com/in/georgetsatsaronis/?originalSubdomain=nl">Georgios Tsatsaronis</a>, Elsevier</p>
+
+        <p><a href="https://www.linkedin.com/in/catriona-fennell-57871823/">Catriona Fennell</a>, Elsevier</p>
+
+        <p><a href="https://dasha.tech">Drahomira Herrmannova</a>, Elsevier</p>
+
+        <hr class="featurette-divider">
+
+        <!-- DAGPap ========================================================= -->
+
+        <h2 id="longsumm"><a href="https://github.com/guyfe/LongSumm">LongSumm 2022: Generating Long Summaries for Scientific Documents</a></h2>
+        <p>
+          Most of the existing work on scientific document summarization focuses on generating short, abstract-like summaries. LongSumm task is
+          focused on the study of generating high quality long summaries for scientific litrature. This is the 3rd iteration of LongSumm
+          <a href="refs-longsumm">[1]</a>. In SDP 2021, LongSumm  has received 50 submissions from 8 different teams. Evaluation results are reported on a
+          public leaderboard.
+        </p>
+
+        <ol class="refs" id="refs-longsumm">
+          <li>Iz Beltagy, Arman Cohan, Guy Feigenblat, Dayne Fre-itag, Tirthankar Ghosal, Keith Hall, Drahomira Herrmannova, Petr Knoth, Kyle Lo, Philipp Mayr, Robert M. Patton, Michal Shmueli-Scheuer, Anita de Waard, Kuansan Wang, and Lucy Lu Wang. (2021). "<a href="https://aclanthology.org/2021.sdp-1.0/">Proceedings of the Second Workshop on Scholarly Document Processing</a>." Association for Computational Linguistics.</li>
+        </ol>
+          
+        <p>
+          Please join our task <a href="https://forms.gle/NBigWpjnJZrPagPJ9">here</a> to receive updates or email us with any questions
+          <a href="mailto:longsumm.shared.task@gmail.com">longsumm.shared.task@gmail.com</a>
+        </p>
+
+        <h3>Organizers</h3>
+
+        <p>Guy Feigenblat, Piiano Privacy Solutions</p>
+
+        <p><a href="https://researcher.watson.ibm.com/researcher/view.php?person=il-SHMUELI">Michal Shmueli-Scheuer</a>, IBM Research</p>
+
+        <hr class="featurette-divider">
+
+        <!-- 3C ======================================================== -->
+
+        <h2 id="survey">SV-Ident 2022: Survey Variable Identification in Social Science Publications</h2>
+
+        <p>
+          For this shared task, we focus on concepts specific to social science literature, namely survey variables. We build on the original work of
+          <a href="refs-survey">[1]</a>, <a href="refs-survey">[2]</a> and propose an evaluation exercise on the task of "Variable Detection and Linking". Survey variable mention
+          identification in texts can be seen as a multi-label classification problem: Given a sentence in a document (in our case: a scientific
+          publication in the social sciences), and a list of unique variables (from a reference vocabulary of survey variables), the task is to
+          classify which variables, if any, are mentioned in each sentence.
+        </p>
+
+        <p>
+          We split the task into two sub-tasks: a) variable detection and b) variable disambiguation. Variable detection deals with identifying
+          whether a sentence contains a variable mention or not, whereas variable disambiguation focuses on identifying which variable from the
+          vocabulary is specifically mentioned in a certain sentence.
+        </p>
+
+        <p>
+          This task is organized by the VAriable Detection, Interlinking and Summarization (VADIS) project.
+        </p>
+
+         <p>
+          Link to the SV-Ident 2022 page (more info to come): <a href="https://vadis-project.github.io/sv-ident-sdp2022/">https://vadis-project.github.io/sv-ident-sdp2022/</a>
+        </p>
+
+        <ol class="refs" id="refs-survey">
+          <li>Andrea Zielinski and Peter Mutschke. (2017). "<a href="https://www.ssoar.info/ssoar/handle/document/57722">Mining social science publications for survey variables</a>." Proceedings of the Second Workshop on NLP and Computational Social Science. Association for Computational Linguistics (ACL).</li>
+          <li>Andrea Zielinski and Peter Mutschke. (2018). "<a href="https://www.ssoar.info/ssoar/handle/document/57723">Towards a gold standard corpus for variable detection and linking in social science publications</a>." Proceedings of the 11<sup>th</sup> International Conference on Language Resources and Evaluation (LREC). European Language Resources Association (ELRA)</li>
+        </ol>
+
+        <h3>Organizers</h3>
+
+        <p><a href="https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/">Simone Paolo Ponzetto</a>, University of Mannheim</p>
+
+        <p><a href="https://www.isi.fraunhofer.de/en/competence-center/innovations-wissensoekonomie/mitarbeiter/zielinski.html">Andrea Zielinski</a>, Fraunhofer ISI</p>
+
+        <p><a href="https://www.torniketsereteli.com/">Tornike Tsereteli</a>, University of Stuttgart</p>
+
+        <p><a href="https://www.linkedin.com/in/yavuz-selim-kartal-4924bb61/">Yavuz Selim Kartal</a>, GESIS</p>
+
+        <p><a href="https://www.gesis.org/en/institute/staff/person/philipp.mayr">Philipp Mayr</a>, GESIS</p>
+
+        <hr class="featurette-divider">
+
+        <!-- 3C ======================================================== -->
+
+        <h2 id="skgg">Scholarly Knowledge Graph Generation</h2>
+
+        <p>
+          With the demise of the widely used Microsoft Academic Graph (MAG) <a href="refs-skgg">[1]</a>, <a href="refs-skgg">[2]</a> at the end of 2021,
+          the scholarly document processing community is facing a pressing need to replace MAG by an open source community supported service.
+          A number of challenging data processing tasks are essential for a scalable creation of a comprehensive scholarly graph, i.e. a graph of
+          entities involving but not limited to research papers, their authors, research organisations and research themes. This shared task will
+          evaluate three key sub-tasks involved in the generation of a scholarly graph:
+        </p>
+
+        <ol>
+          <li>extracting research themes from scholarly documents,</li>
+          <li>document deduplication, i.e. identifying and linking different versions of the same scholarly document, and</li>
+          <li>affiliation mining, i.e. linking research papers or their metadata to the organisational entities that produced them.</li>
+        </ol>
+
+        <p>
+          Test and evaluation data will be supplied by the CORE aggregator <a href="refs-skgg">[3]</a>.
+        </p>
+
+        <ol class="refs" id="refs-skgg">
+          <li>Kuansan Wang, Zhihong Shen, Chiyuan Huang, Chieh-Han Wu, Yuxiao Dong, and Anshul Kanakia. (2020). "<a href="https://direct.mit.edu/qss/article/1/1/396/15572/Microsoft-Academic-Graph-When-experts-are-not">Microsoft academic graph: When experts are not enough</a>." Quantitative Science Studies. MIT Press Direct.</li>
+          <li>Drahomira Herrmannova and Petr Knoth. (2016). "<a href="https://dlib.org/dlib/september16/herrmannova/09herrmannova.print.html">An analysis of the microsoft academic graph</a>." D-Lib Magazine.</li>
+          <li>Petr Knoth and Zdenek Zdrahal. (2012). "<a href="http://www.dlib.org/dlib/november12/knoth/11knoth.print.html">Core: three access levels to underpin open access</a>." D-Lib Magazine.</li>
+        </ol>
+
+        <h3>Preregistration</h3>
+
+        <p>
+          <a href="https://forms.gle/7nduU6meseEpv9i69">Pre-register your team here</a> and we'll keep you posted with competition updates and timelines.
+        </p>
+
+        <h3>Organizers</h3>
+
+        <p><a href="https://www.open.ac.uk/people/pk3295">Petr Knoth</a>, Open University</p>
+
+        <p><a href="http://kmi.open.ac.uk/people/member/david-pride">David Pride</a>, Open University</p>
+
+        <p><a href="https://www.linkedin.com/in/ronin-wu-66221226/">Ronin Wu</a>, Iris.ai</p>
+
+        <p><a href="https://dasha.tech">Drahomira Herrmannova</a></p>
+
+        <hr class="featurette-divider">
+
+        <!-- 3C ======================================================== -->
+        <h2 id="mup"><a href="https://github.com/allenai/mup">Multi Perspective Scientific Document Summarization</a></h2>
+        <p>
+          Generating summaries of scientific documents is known to be a challenging task. Majority of existing work in summarization assumes only one single best gold
+          summary for each given document. Having only one gold summary negatively impacts our ability to evaluate the quality of summarization systems as writing summaries
+          is a subjective activity. At the same time, annotating multiple gold summaries for scientific documents can be extremely expensive as it requires domain experts to
+          read and understand long scientific documents. This shared task will enable exploring methods for generating multi-perspective summaries. We introduce a novel
+          summarization corpus, leveraging data from scientific peer reviews to capture diverse perspectives from the reader's point of view.
+        </p>
+         <p>
+          Please join our task <a href="https://forms.gle/K2UECKvmghzDHUpo7">here</a>.
+         </p>
+         <p>
+          Please refer to our <a href="https://github.com/allenai/mup">MuP task page</a> for more details.
+        </p>
+        <h3>Organizers</h3>
+
+        <p>Guy Feigenblat, Piiano, Israel</p>
+
+        <p><a href="https://researcher.watson.ibm.com/researcher/view.php?person=il-SHMUELI">Michal Shmueli-Scheuer</a>, IBM Research AI, Haifa Research Lab, Israel</p>
+
+        <p><a href="http://armancohan.com/">Arman Cohan</a>, Allen Institute for AI, Seattle, USA</p>
+
+        <p><a href="https://elitr.eu/tirthankar-ghosal/">Tirthankar Ghosal</a>, Charles University, Czech Republic</p>
+
+        <!-- IMPORTANT DATES ========================================================= -->
+
+        <!-- <h2 id="register">Registration</h2>
+
+        <p>
+          To register for participation in the shared tasks, please use <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHzByrog-k299qBuCp3SbPWcb905_kmOWMvHpDH57VLpVrg/viewform">this registration form</a>.
+        </p>
+
+        <p>TBA</p>
+
+        <hr class="featurette-divider"> -->
+
+        <!-- IMPORTANT DATES ========================================================= -->
+
+        <!-- <h2 id="dates">Important Dates</h2>
+
+        <p>
+          Please consult the <a href="index.html">SDP Workshop website</a> for official dates for the workshop. All submission deadlines are 11:59 PM AoE (Anywhere on Earth) Time Zone (UTC-12).
+        </p>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Event</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Training Set Release</td>
+              <td>Feb 15, 2020. An additional development set will be made available closer to the test set release date</td>
+            </tr>
+            <tr>
+              <td>Deadline for Registration</td>
+              <td> April 30 (remains open till evaluation window starts)<br /></td>
+            </tr>
+            <tr>
+              <td>Test Set Release (Blind)</td>
+              <td><del>July 1, 2020</del> July 15, 2020</td>
+            </tr>
+            <tr>
+              <td>System Runs Due</td>
+              <td><del>August 1, 2020</del> Aug 15, 2020 </td>
+            </tr>
+            <tr>
+              <td>Preliminary System Reports Due in SoftConf</td>
+              <td>August 16, 2020</td>
+            </tr>
+            <tr>
+              <td>Camera-Ready Contributions Due in SoftConf</td>
+              <td><del>August 31, 2020</del> Oct 10, 2020</td>
+            </tr>
+            <tr>
+              <td>Participant Presentations at SDP 2020</td>
+              <td><del>Nov 12</del> Nov 19, 2020</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="featurette-divider"> -->
+
+      </div>
+    </div>
+
+    <!-- FOOTER ========================================== -->
+
+    <hr><br />
+
+    <footer>
+      <div class="footer-wrapper">
+        <div class="footer-left">
+          <p>Contact: <a href="mailto:sdproc2022@googlegroups.com">sdproc2022@googlegroups.com</a></p>
+          <p>Sign up for updates: <a href="https://groups.google.com/g/sdproc-updates">https://groups.google.com/g/sdproc-updates</a></p>
+          <p>Follow us: <a href="https://twitter.com/sdproc">https://twitter.com/SDProc</a></p>
+        </div>
+        <div class="footer-right">
+          <a href="#">Back to top</a>
+        </div>
+    </footer>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript ================================================== -->
+  <script src="./dist/js/bootstrap.min.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</body>
+
+</html>
