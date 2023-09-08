@@ -504,3 +504,7 @@ ol.refs > li:before {
 .table > tbody > tr > .tz {
   vertical-align: middle;
 }
+
+.twitter-timeline {
+    width: 100vw !important;
+}
