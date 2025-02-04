@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="4th Workshop on Scholarly Document Processing">
+  
+    <title>5th Workshop on Scholarly Document Processing</title>
+  
+    <!-- Bootstrap core CSS -->
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+  
+    <!-- Fira Sans font -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+  
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+  
+    <!-- Custom styles for this template -->
+    <link href="styles.css" rel="stylesheet">
+  
+    <!-- icons -->
+    <link rel="stylesheet" href="./font-awesome-4.1.0/css/font-awesome.min.css">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+  </head>
+
+<body>
+
+  <!-- NAVBAR ================================================== -->
+
+  <div class="navbar-wrapper"></div>
+  <script src="menu.js" type="text/javascript"></script>
+
+  <!-- MAIN CONTENT ============================================= -->
+
+  <div class="container marketing navbar-spacing">
+
+    <div class="row featurette">
+      <div class="col-md-12">
+        <h1>ClimateCheck: Scientific Fact-checking of Social Media Posts on Climate Change</h1>
+      </div>
+    </div>
+
+
+      <p>
+         Social media facilitates discussions on critical issues such as climate change, but it also contributes to the rapid dissemination of misinformation, which complicates efforts to maintain an informed public and create evidence-based policies. 
+         In this shared task, we emphasise the need to link public discourse to peer-reviewed scholarly articles by gathering English claims from social media about climate change as well as a corpus of about 400K abstracts of publications from the climate sciences domains. 
+         Participants will be asked to retrieve relevant abstracts for each claim (subtask I) and classify the relation between the claim and abstract as ‘supports’, ‘refutes’, or ‘not enough information’ (subtask II). 
+         A link to the competition webpage will be provided soon. 
+      </p> 
+
+  <h4>Subtask I: Abstracts Retrieval</h4> 
+        <ul>
+    <li>Task: given a claim from social media about climate change and a corpus of abstracts, retrieve the top K most relevant abstracts.</li>
+    <li>Evaluation: MAP and B-Pref accounting for retrieving relevant abstracts and not penalising unjudged documents.  </li>
+        </ul>
+  <h4>Subtask II: Claim Verification</h4> 
+        <ul>
+    <li>Task: given the claim-abstract pairs received from the previous subtask, classify their relation as ‘support’, ‘refutes’, or ‘not enough information’. </li>
+    <li>Evaluation: F1 score based on judged documents from gold data; unjudged documents will not be included in computing the score.</li>
+        </ul>
+        
+        <h3>Important Dates</h3>
+
+          <ul>
+            <li>Training set release: April 1st, 2025 </li>
+            <li>Test set release: April 15th, 2025</li>
+            <li>Systems submissions deadline: May 16th, 2025 </li>
+            <li>Paper submission deadline: May 23rd, 2025</li>
+            <li>Notification of acceptance: June 13th, 2025 </li>
+            <li>Camera-ready paper due: June 20th, 2025  </li>
+            <li>Workshop dates: July 31st or August 1st, 2025 (TBA) </li>
+          </ul> 
+
+        <h3>Organizers</h3>
+
+        <p><a href="mailto:raia.abu_ahmad@dfki.de">Raia Abu Ahmad (DFKI)</a></p>
+  <p><a href="mailto:aida.usmanova@stud.leuphana.de">Aida Usmanova (Leuphana University Lüneburg)</a></p>
+        <p><a href="">Georg Rehm (DFKI)</a></p>
+    
+    
+    <!-- FOOTER ========================================== -->
+
+    <hr><br />
+
+    <footer>
+      <div class="footer-wrapper">
+        <div class="footer-left">
+          <p>Contact: <a href="mailto:sdproc2025@googlegroups.com">sdproc2025@googlegroups.com</a></p>
+          <p>Sign up for updates: <a href="https://groups.google.com/g/sdproc-updates">https://groups.google.com/g/sdproc-updates</a></p>
+          <p>Follow us: <a href="https://twitter.com/SDPWorkshop">https://twitter.com/SDPWorkshop</a></p>
+        </div>
+        <div class="footer-right">
+          <a href="#">Back to top</a>
+        </div>
+    </footer>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript ================================================== -->
+  <script src="./dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
