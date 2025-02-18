@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="4th Workshop on Scholarly Document Processing">
-  
+  <!-- LOGO AND TITLE SIDE-BY-SIDE -->
+
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
     <title>5th Workshop on Scholarly Document Processing</title>
-  
+  </div>
     <!-- Bootstrap core CSS -->
     <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
   
@@ -44,10 +46,16 @@
 <!-- MAIN CONTENT ============================================= -->
 
 <div class="container marketing navbar-spacing">
-
+<!-- LOGO AND TITLE -->
+<div style="text-align: center; margin-bottom: 20px;">
+  <img src="./images/nfdi_logo.png" alt="SOMD 2025 Logo" style="width:150px; height:auto;">
+</div>
   <div class="row featurette">
     <div class="col-md-12">
-      <h1>Software Mention Detection (SOMD) 2025</h1>
+      <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+    <h1 style="margin: 0;">Software Mention Detection (SOMD) 2025</h1>
+  <img src="./images/somd_logo.png" alt="SOMD 2025 Logo" style="width:100px; height:auto; margin-left: 15px;">
+    </div>
       <p>Software plays an essential role in scientific research and is considered one of the crucial entity types in scholarly documents. However, the software is usually not cited formally in academic documents, resulting in various informal software mentions. Automatic identification and disambiguation of software mentions, related attributes, and the purpose of software mentions contributes to the better understanding, accessibility, and reproducibility of research but is a challenging task. </p>
       <p>This competition invites participants to develop a system that detects software mentions and their attributes as named entities from scholarly texts and classifies the relationships between these entity pairs. The dataset includes sentences from full-text scholarly documents annotated with Named Entities and Relations. It contains various software types, such as Operating Systems or Applications, and attributes like URLs and version numbers.
         This task emphasizes the joint learning of Named Entity Recognition (NER) and Relation Extraction (RE) (<a href="#ref1">Hennen et al., 2024</a> ; <a href="#ref2">Cabot & Navigli, 2021 </a>; <a href="#ref4">Wadden et al., 2019</a>; <a href="#ref5">Ye et al., 2022</a>) to improve computational efficiency and model accuracy, moving away from traditional pipeline approaches (<a href="#ref6">Zeng et al., 2014</a>; <a href="#ref7">Zhang et al., 2017</a>) . Effective integration of NER and RE, as supported by relevant studies, significantly boosts performance (<a href="#ref3">Li & Ji, 2014</a>).
