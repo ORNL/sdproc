@@ -66,7 +66,7 @@
             <a href="#scihal25">SciHal2025: Hallucination Detection for Scientific Content</h2></a>
           </li>
         <li>
-            <a href="#context25">Context25: Contextualizing Scientific Figures and Tables</h2></a>
+            <a href="context25.html">Context25: Contextualizing Scientific Figures and Tables</h2></a>
           </li>
           <li>
             <a href=scivqa.html>SciVQA: Scientific Visual Question Answering</h2></a>
@@ -75,7 +75,7 @@
             <a href=climatecheck.html>ClimateCheck: Scientific Fact-checking of Social Media Posts on Climate Change</h2></a>
           </li>
           <li>
-            <a href="#somd">SOMD25: Software Mention Detection in Scholarly Publications</h2></a>
+            <a href=somd25.html>SOMD25: Software Mention Detection in Scholarly Publications</h2></a>
           </li>
         </ul>
 
@@ -221,29 +221,36 @@
 	<p>
 	This shared task invites participants to develop and evaluate systems that detect hallucinations in automatically generated scientific answers. The dataset comprises research-oriented questions sourced from subject matter experts, along with corresponding answers and references. These answers are produced by various well-performing retrieval-augmented generation (RAG) systems indexing approximately millions of published academic abstracts. Each answer is annotated to indicate whether it includes unsupported claims that are not grounded in the provided references. Two levels of labeling will be provided: a three-class scheme (entailment, neutral, contradiction) and a more detailed scheme encompassing 10+ fine-grained categories (to be specified later). Teams are challenged to classify claims into the appropriate categories, with evaluation metrics focusing on the precision and recall of detecting unsupported claims.
 	</p>
-          
+
+	<p>
+	More information is available on <a href=scihal.html>the shared task page</a>.
+	</p>
 		
 	<h3>Organizers</h3>
 
-        <p><a href="">Dan Li, Colin Kehan Zhang, Bogdan Palfi, Adrian Raudaschl, Anita de Waard (Elsevier). </a></p>
+        <p><a href="mailto:d.li1@elsevier.com">Dan Li (Elsevier)</a></p>
+        <p><a href="mailto:c.zhang.3@elsevier.com">Colin Kehan Zhang (Elsevier)</a></p>
+        <p><a href="mailto:b.palfi@elsevier.com">Bogdan Palfi (Elsevier)</a></p>
+        <p><a href="mailto:a.raudaschl@elsevier.com">Adrian Raudaschl (Elsevier)</a></p>
+        <p><a href="mailto:A.dewaard@elsevier.com">Anita de Waard (Elsevier)</a></p>
 	      
 	<hr class="featurette-divider">
 
-        <h2 id="context25">Context25: Contextualizing Scientific Figures and Tables </h2>
+        <h2 id="Context25">Context25: Contextualizing Scientific Figures and Tables </h2>
 
         <p>
         You are invited to participate in the shared task “Context25: Evidence and Grounding Context Identification for Scientific Claims” collocated with the 5th Workshop on Scholarly Document Processing (SDP 2025) to be held at ACL 2025. Participants of the competition are also invited to submit papers describing their findings.  
       </p> 
 	  
 	     <p>
-          Interpreting scientific claims in the context of empirical findings is a valuable practice, yet extremely time-consuming for researchers. Such interpretation of scientific claims requires identifying key results that provide supporting evidence from research papers, and contextualizing these results with associated methodological details (e.g., measures, sample, etc.). In this shared task, we are interested in automating identification of key results (or evidence) as well as additional grounding context to make claim interpretation more efficient. 
-        </p>
+        Interpreting scientific claims in the context of empirical findings is a valuable practice, yet extremely time-consuming for researchers. Such interpretation of scientific claims requires identifying key results (from figures or tables) that provide supporting evidence from research papers, and contextualizing these results with associated methodological details (e.g., measures, sample, etc.). In this shared task, we are interested in automating identification of key results (or evidence) as well as additional grounding context to make claim interpretation more efficient.
+      </p>
 		
 		         <h3>Organizers</h3>
 
-        <p><a href="">Joel Chan (University of Maryland)</a></p>
-        <p><a href="">Matthew Akamatsu (University of Washington)</a></p>
-        <p><a href="">Aakanksha Naik (Allen Institute for AI)</a></p>
+        <p><a href="mailto:joelchan@umd.edu">Joel Chan (University of Maryland)</a></p>
+        <p><a href="mailto:akamatsm@uw.edu">Matthew Akamatsu (University of Washington)</a></p>
+        <p><a href="mailto:aakankshan@allenai.org">Aakanksha Naik (Allen Institute for AI)</a></p>
 
        <!-- <p>
         All papers must follow the ACL format and conform to the ACL 2024 Submission Guidelines. Papers must be submitted via <a href="https://openreview.net/group?id=aclweb.org/ACL/2024/Workshop/SDProc">openreview</a>.
@@ -346,16 +353,16 @@
 			<h2 id="somd">Software Mention Detection in Scholarly Publications (SOMD 25) </h2>
 
        <p>
-       Software plays an essential role in scientific research and is considered one of the crucial entity types in scholarly documents. However, software usually is not cited formally in academic documents, resulting in various informal mentions of software. Automatic identification and disambiguation of software mentions, related attributes and the purpose of a software mentions contributes to the better understanding, accessibility, and reproducibility of research but is a challenging task. We are extending our first iteration of the shared task <a href="https://nfdi4ds.github.io/nslp2024/docs/somd_shared_task.html">SOMD 2024</a> with new challenges.    
+       Software plays an essential role in scientific research and is considered one of the crucial entity types in scholarly documents. However, software usually is not cited formally in academic documents, resulting in various informal mentions of software. Automatic identification and disambiguation of software mentions, related attributes and the purpose of a software mentions contributes to the better understanding, accessibility, and reproducibility of research but is a challenging task. We are extending our first iteration of the shared task <a href="https://nfdi4ds.github.io/nslp2024/docs/somd_shared_task.html">SOMD 2024</a> with new challenges.
+       This competition invites participants to develop a system that detects software mentions and their attributes as named entities from scholarly texts and classifies the relationships between these entity pairs.
+       For details, visit <a href=somd25.html>SOMD2025 shared task page</a>
       </p> 
 
         <h3>Organizers</h3>
 
-        <p><a href="">Sharmila Upadhyaya</a></p>
-        <p><a href="">Frank Krueger</a></p>
-		<p><a href="">Stefan Dietze</a></p>
-		
-    
+        <p><a href="mailto:sharmila.upadhyaya@gesis.org">Sharmila Upadhyaya  (GESIS Leibniz Institut für Sozialwissenschaften, Germany)</a></p>
+        <p><a href="">Frank Krueger (Wismar University of Applied Sciences, Germany)</a></p>
+	<p><a href="">Stefan Dietze (GESIS Leibniz Institut für Sozialwissenschaften, Cologne & Heinrich-Heine-University Düsseldorf, Germany)</a></p>
 	
         <hr class="featurette-divider">
   
