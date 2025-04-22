@@ -56,24 +56,31 @@
          Social media facilitates discussions on critical issues such as climate change, but it also contributes to the rapid dissemination of misinformation, which complicates efforts to maintain an informed public and create evidence-based policies. 
          In this shared task, we emphasise the need to link public discourse to peer-reviewed scholarly articles by gathering English claims from social media about climate change as well as a corpus of about 400K abstracts of publications from the climate sciences domains. 
          Participants will be asked to retrieve relevant abstracts for each claim (subtask I) and classify the relation between the claim and abstract as ‘supports’, ‘refutes’, or ‘not enough information’ (subtask II). 
-         A link to the competition webpage will be provided soon. 
       </p> 
 
   <h4>Subtask I: Abstracts Retrieval</h4> 
         <ul>
-    <li>Task: given a claim from social media about climate change and a corpus of abstracts, retrieve the top K most relevant abstracts.</li>
-    <li>Evaluation: MAP and B-Pref accounting for retrieving relevant abstracts and not penalising unjudged documents.  </li>
+    <li>Task: given a claim from social media about climate change and a corpus of abstracts, retrieve the top 10 most relevant abstracts.</li>
+    <li>Evaluation: Recall@K (K=2, 5, 10) and B-Pref accounting for retrieving relevant abstracts and not penalising unjudged documents.  </li>
         </ul>
   <h4>Subtask II: Claim Verification</h4> 
         <ul>
     <li>Task: given the claim-abstract pairs received from the previous subtask, classify their relation as ‘support’, ‘refutes’, or ‘not enough information’. </li>
     <li>Evaluation: F1 score based on judged documents from gold data; unjudged documents will not be included in computing the score.</li>
         </ul>
-        
+    
+  <h3>Competition Page</h3>
+  <p>The shared task is now live on codabench: <a href="https://www.codabench.org/competitions/6639/">https://www.codabench.org/competitions/6639/</a>.</p>
+  <p>Further updates about the shared task, including training and testing data, will be posted on the codabench competition page.</p>  
+
+  <h3>Data</h3>
+  <p>The training data is available at: <a href="https://huggingface.co/datasets/rabuahmad/climatecheck">https://huggingface.co/datasets/rabuahmad/climatecheck</a></p>
+  <p>The publications corpus is available at: <a href="https://huggingface.co/datasets/rabuahmad/climatecheck_publications_corpus">https://huggingface.co/datasets/rabuahmad/climatecheck_publications_corpus</a></p>
+    
         <h3>Important Dates</h3>
 
           <ul>
-            <li>Training set release: April 1st, 2025 </li>
+            <li>Training set release: <del>April 1st, 2025</del> </li>
             <li>Test set release: April 15th, 2025</li>
             <li>Systems submissions deadline: May 16th, 2025 </li>
             <li>Paper submission deadline: May 23rd, 2025</li>
